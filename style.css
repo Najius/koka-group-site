@@ -6,7 +6,7 @@
 :root{
   --bg:#0a0a0a;--bg-dark:#111;--card:#0e0e0e;
   --black:#F4F1EC;--dark:#e0ddd7;--white:#F4F1EC;
-  --muted:#777;--dim:#555;
+  --muted:#999;--dim:#777;
   --blue:#8CB3D2;--blue-dark:#8CB3D2;
   --mariage:#C8A96E;--corporate:#5b8cc9;--artistique:#b97fbf;--soirees:#D4766A;
   --border:rgba(255,255,255,.07);
@@ -164,19 +164,19 @@ em{color:var(--blue);font-style:italic}
 .header .logo img,.header .burger span,.header-nav a{transition:filter .5s var(--ease),color .5s var(--ease),background .5s var(--ease),height .4s var(--ease)}
 [data-header-universe="mariages"] .logo img{filter:none}
 [data-header-universe="mariages"] .burger span{background:#F4F1EC}
-[data-header-universe="mariages"] .header-nav a{color:#8a8580}
+[data-header-universe="mariages"] .header-nav a{color:#b0aaa4}
 [data-header-universe="mariages"].scrolled{background:rgba(13,11,8,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="corporate"] .logo img{filter:none}
 [data-header-universe="corporate"] .burger span{background:#dce4ee}
-[data-header-universe="corporate"] .header-nav a{color:#7a8ea8}
+[data-header-universe="corporate"] .header-nav a{color:#9ab0cc}
 [data-header-universe="corporate"].scrolled{background:rgba(8,12,20,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="soirees"] .logo img{filter:none}
 [data-header-universe="soirees"] .burger span{background:#F4F1EC}
-[data-header-universe="soirees"] .header-nav a{color:#777}
+[data-header-universe="soirees"] .header-nav a{color:#999}
 [data-header-universe="soirees"].scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="artistique"] .logo img{filter:none}
 [data-header-universe="artistique"] .burger span{background:#e8dce8}
-[data-header-universe="artistique"] .header-nav a{color:#9a7fa0}
+[data-header-universe="artistique"] .header-nav a{color:#b89ebe}
 [data-header-universe="artistique"].scrolled{background:rgba(14,6,16,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 
 .header--filled{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -191,7 +191,7 @@ em{color:var(--blue);font-style:italic}
 .logo img{height:42px;width:auto;filter:brightness(0) invert(1);transition:height .4s var(--ease),opacity .5s var(--ease),transform .5s var(--ease)}
 .header.scrolled .logo img{height:34px}
 .header.hero-hidden{opacity:0;pointer-events:none;transform:translateY(-15px)}
-.header-nav{display:none}
+.header-nav{display:flex;align-items:center;gap:2.5rem}
 .header-actions{display:flex;align-items:center;gap:1.2rem}
 .header-wa{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;transition:all .3s var(--ease);z-index:1001}
 .header-wa:hover{background:#1ebe5a;color:#fff;transform:scale(1.1)}
@@ -608,6 +608,18 @@ a.presta-card:hover h4{color:var(--blue)}
 .cross-link{display:inline-block;padding:12px 28px;border:1px solid var(--border);font-family:var(--ff);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .4s var(--ease)}
 .cross-link:hover{border-color:var(--blue);color:var(--blue)}
 
+/* Skip link */
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--bg);padding:12px 24px;font-size:14px;z-index:9999;border-radius:0 0 8px 8px;transition:top .3s}
+.skip-link:focus{top:0}
+
+/* Hero CTA area */
+.hero-cta{text-align:center;margin-top:2rem;position:relative;z-index:2}
+.hero-tagline{font-size:18px;color:var(--muted);margin-bottom:1.5rem;letter-spacing:.5px}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* Section intermediate CTA */
+.section-cta{text-align:center;padding:2rem clamp(1.5rem,5vw,5rem) 4rem}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .hero-vinyl{min-height:auto;padding:6rem 1.5rem 3rem}
@@ -628,6 +640,7 @@ a.presta-card:hover h4{color:var(--blue)}
   .values-ed{grid-template-columns:1fr;gap:2rem}
 }
 @media(max-width:768px){
+  .header-nav{display:none}
   .hero-text h1{font-size:clamp(2.5rem,12vw,4rem)}
   .vinyl-presta{flex-direction:column;gap:.3rem}
   .services-grid{grid-template-columns:1fr}

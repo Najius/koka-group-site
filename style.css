@@ -581,6 +581,26 @@ cite{display:block;margin-top:2rem;font-family:var(--ff);font-size:24px;color:va
 
 /* (old footer sub-pages styles removed — unified into .site-footer) */
 
+/* ===== FAQ ===== */
+.faq{max-width:900px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-top:1px solid var(--border);overflow:hidden}
+.faq-item:last-child{border-bottom:1px solid var(--border)}
+.faq-question{padding:1.5rem 0;font-family:var(--fd);font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none;transition:color .3s}
+.faq-question::-webkit-details-marker{display:none}
+.faq-question::after{content:'+';font-size:1.4rem;color:var(--blue);transition:transform .3s var(--ease)}
+.faq-item[open] .faq-question::after{content:'−'}
+.faq-item[open] .faq-question{color:var(--blue)}
+.faq-answer{padding:0 0 1.5rem;max-width:700px}
+.faq-answer p{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* ===== CROSS-LINKS ===== */
+.cross-links{padding:4rem clamp(1.5rem,5vw,5rem);text-align:center}
+.cross-links h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:2rem}
+.cross-links-grid{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.cross-link{display:inline-block;padding:12px 28px;border:1px solid var(--border);font-family:var(--ff);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .4s var(--ease)}
+.cross-link:hover{border-color:var(--blue);color:var(--blue)}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .hero-vinyl{min-height:auto;padding:6rem 1.5rem 3rem}

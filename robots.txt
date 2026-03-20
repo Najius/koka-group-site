@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koka-group.com/sitemap.xml

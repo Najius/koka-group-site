@@ -1,0 +1,15 @@
+# Clean URLs (optional - remove .html)
+/prestations    /prestations.html   200
+/mariages       /mariages.html      200
+/corporate      /corporate.html     200
+/soirees        /soirees.html       200
+/artistique     /artistique.html    200
+/a-propos       /a-propos.html      200
+/contact        /contact.html       200
+/mentions-legales /mentions-legales.html 200
+
+# Old WordPress URL redirects
+/prestations-seminaires-soirees-privees-installations/  /prestations.html  301
+/a-propos-agence-evenementielle-nantes/                 /a-propos.html     301
+/contact-devis-dj-animation-nantes/                     /contact.html      301
+/maintenance/                                            /                  301

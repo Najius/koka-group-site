@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOKA Group — DJ & Animation Musicale Sur-Mesure</title>
+  <meta name="description" content="KOKA Group, duo de DJs passionnés spécialisés dans l'animation musicale sur-mesure pour vos événements.">
+  <meta property="og:title" content="KOKA Group — DJ & Animation Musicale Sur-Mesure">
+  <meta property="og:description" content="KOKA Group, duo de DJs passionnés spécialisés dans l'animation musicale sur-mesure pour vos événements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koka-group.com/">
+  <meta property="og:image" content="https://koka-group.com/images/couple-dance-lights.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/webp" href="images/favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=760">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- (bg-rings removed) -->
+
+  <!-- HEADER -->
+  <header class="header" id="header" data-header-universe="mariages">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="KOKA Group"></a>
+    <nav class="header-nav">
+      <a href="prestations.html">Prestations</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://wa.me/33768080080?text=Bonjour%20KOKA%20Group%20!%20Je%20souhaite%20discuter%20d'un%20événement." class="header-wa" target="_blank" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- NAV OVERLAY (mobile) -->
+  <div class="nav-overlay">
+    <nav><ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="prestations.html">Prestations</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-vinyl" id="hero">
+    <!-- Background image — same as O portal, low opacity -->
+    <div class="hero-bg-photo" id="heroBgPhoto">
+      <img src="images/couple-dance-lights.jpg" alt="Ambiance dancefloor KOKA Group">
+    </div>
+    <!-- KOKA logo SVG with O as image viewport -->
+    <div class="vinyl-logo">
+      <!-- SVG filter definition (shared) -->
+      <svg class="vinyl-svg-defs" style="position:absolute;width:0;height:0">
+        <defs>
+          <filter id="logoDistort" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.015 0.015" numOctaves="2" seed="1" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+      </svg>
+      <!-- Each letter is its own layer (HTML div + SVG) so GSAP can parallax them independently -->
+      <div class="letter-layer" id="layerK1">
+        <svg viewBox="100 50 920 300" xmlns="http://www.w3.org/2000/svg">
+          <polygon fill="#fff" points="359.2,332.3 256.8,216.2 343.3,104.6 284.1,104.6 195.3,219.3 195.3,81.3 141.5,60.5 140.6,334.6 195.3,334.6 195.3,220.6 293.2,332.3" filter="url(#logoDistort)"/>
+        </svg>
+      </div>
+      <div class="letter-layer" id="layerK2">
+        <svg viewBox="100 50 920 300" xmlns="http://www.w3.org/2000/svg">
+          <polygon fill="#fff" points="784,332.3 681.5,216.2 768,104.6 708.8,104.6 620,219.3 620,98 565.4,98 565.4,334.6 620,334.6 620,220.6 717.9,332.3" filter="url(#logoDistort)"/>
+        </svg>
+      </div>
+      <div class="letter-layer" id="layerA">
+        <svg viewBox="100 50 920 300" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#fff" d="M977.1,122.2v-20.5h-47.8h-4.6v12.1c-19.2-13-42.4-20.5-67.3-20.5c-66.7,0-120.7,54-120.7,120.7s54,120.7,120.7,120.7c24.9,0,48.1-7.6,67.3-20.5v17.6h52.4v-20.5V122.2z M857.3,286.8c-39.3,0-71.1-31.8-71.1-71.1c0-39.3,31.8-71.1,71.1-71.1c39.3,0,71.1,31.8,71.1,71.1C928.5,254.9,896.6,286.8,857.3,286.8z" filter="url(#logoDistort)"/>
+        </svg>
+      </div>
+      <!-- Image portal inside the O -->
+      <div class="vinyl-portal" id="vinylO">
+        <div class="vinyl-o-imgs">
+          <div class="vinyl-o-img active"><img src="images/couple-dance-lights.jpg" alt="Couple dansant"></div>
+          <div class="vinyl-o-img"><img src="images/mariage-ouverture.jpg" alt="Ouverture de bal mariage"></div>
+          <div class="vinyl-o-img"><img src="images/dj-dancefloor-view.jpg" alt="Vue DJ dancefloor"></div>
+          <div class="vinyl-o-img"><img src="images/setup-gala.jpg" alt="Installation gala"></div>
+        </div>
+        <div class="vinyl-dot" id="vinylDot"></div>
+      </div>
+      <!-- "group" label bottom-right like the real logo -->
+      <div class="vinyl-group-label" id="vinylGroupLabel">group</div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Mariages</span><span>Séminaires</span><span>Vernissages</span><span>Soirées privées</span><span>Défilés</span><span>Concerts</span><span>Corporate</span><span>Anniversaires</span>
+      <span>Mariages</span><span>Séminaires</span><span>Vernissages</span><span>Soirées privées</span><span>Défilés</span><span>Concerts</span><span>Corporate</span><span>Anniversaires</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="services-head">
+      <h2>Nos <em>prestations</em></h2>
+      <p>Une offre sur-mesure alliant excellence technique et créativité artistique.</p>
+    </div>
+    <div class="services-grid">
+      <a href="mariages.html" class="svc-card svc-card--mariages">
+        <span class="svc-card-num">01</span>
+        <div class="svc-card-img"><img src="images/event-dancefloor2.jpg" alt="Animation DJ mariage dancefloor"></div>
+        <h3>Mariages</h3>
+        <p>Du vin d'honneur au dancefloor, une bande son pensée pour chaque moment.</p>
+      </a>
+      <a href="corporate.html" class="svc-card svc-card--corporate">
+        <span class="svc-card-num">02</span>
+        <div class="svc-card-img"><img src="images/event-crowd.jpg" alt="Soirée corporate foule"></div>
+        <h3>Corporate</h3>
+        <p>Séminaires, galas et soirées d'entreprise avec une identité sonore sur-mesure.</p>
+      </a>
+      <a href="artistique.html" class="svc-card svc-card--artistique">
+        <span class="svc-card-num">03</span>
+        <div class="svc-card-img"><img src="images/event-ambiance.jpg" alt="Ambiance événement artistique"></div>
+        <h3>Artistique</h3>
+        <p>Défilés, installations sonores et collaborations créatives.</p>
+      </a>
+      <a href="soirees.html" class="svc-card svc-card--soirees">
+        <span class="svc-card-num">04</span>
+        <div class="svc-card-img"><img src="images/event-dancefloor.jpg" alt="Soirée privée dancefloor"></div>
+        <h3>Soirées privées</h3>
+        <p>Garden party, pool party, fête concept — des univers sonores uniques.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section-pad">
+    <div class="process-head">
+      <span class="label">Comment ça marche</span>
+      <h2>Votre événement en <em>4 étapes</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <span class="process-num">01</span>
+        <h3>Échange & vision</h3>
+        <p>Un premier appel pour comprendre votre univers, vos envies, votre public. Nous écoutons avant tout.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">02</span>
+        <h3>Conception sur-mesure</h3>
+        <p>Nous élaborons un concept musical et scénographique adapté. Playlist, éclairages, ambiances : tout est pensé pour vous.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">03</span>
+        <h3>Installation & répétition</h3>
+        <p>Matériel haut de gamme installé en amont. Repérage du lieu, calibrage son et lumière, test de chaque transition.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">04</span>
+        <h3>Le jour J</h3>
+        <p>Nous orchestrons chaque moment avec une adaptabilité constante. Vous profitez, nous gérons tout le reste.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-split">
+    <div class="about-img-wrap"><img src="images/duo-bw.jpg" alt="Camille & Colin — KOKA Group"></div>
+    <div class="about-body">
+      <span class="label">Qui sommes-nous</span>
+      <h2>Deux passionnés,<br>une <em>vision</em></h2>
+      <p>KoKa Group est une agence événementielle fondée en 2022 par Camille et Colin — deux passionnés de musique et hardis défenseurs du travail bien fait.</p>
+      <p>Son, lumière, mise en scène, animations : chaque élément est pensé pour une immersion totale. Nous vous accompagnons à chaque étape pour façonner un événement à votre image.</p>
+      <p style="margin-top:1rem;font-size:14px;color:var(--blue);letter-spacing:1px">Nantes · France · International</p>
+      <a href="a-propos.html" class="btn btn-light">Notre histoire</a>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <span class="label">Ils nous ont fait confiance</span>
+    <div class="trust-row">
+      <img src="images/logo-lacigale.svg" alt="La Cigale">
+      <img src="images/logo-ieseg.svg" alt="IESEG">
+      <img src="images/logo-futuroscope.png" alt="Futuroscope">
+      <img src="images/logo-alteora.png" alt="Hotel Alteora">
+      <img src="images/logo-ucpa.svg" alt="UCPA">
+      <img src="images/logo-lalocomotive.jpg" alt="La Locomotive">
+      <img src="images/logo-whitebabel.jpg" alt="White Babel">
+      <img src="images/logo-shaarghot.jpg" alt="Shaârghot">
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="quote-deco">"</div>
+    <blockquote>KOKA Group a sublimé notre mariage. Du vin d'honneur à la fin de soirée, chaque moment musical était parfait. Nos invités en parlent encore.</blockquote>
+    <cite>Claire D. — Mariée</cite>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gallery-head">
+      <h2>Sur <em>Instagram</em></h2>
+      <a href="https://www.instagram.com/koka.group/" target="_blank" class="label">@koka.group</a>
+    </div>
+    <div class="gallery-grid">
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/couple-dance-lights.jpg" alt="Couple dansant sous les lumières"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/mariage-ouverture.jpg" alt="Ouverture de bal mariage"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/setup-gala.jpg" alt="Installation sonore gala"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/dj-vinyl-action.jpg" alt="DJ en action aux platines"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/dj-dancefloor-view.jpg" alt="Vue du dancefloor depuis le DJ"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/event-dancefloor2.jpg" alt="Dancefloor animé en soirée"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/event-crowd.jpg" alt="Foule en soirée événementielle"></a>
+      <a href="https://www.instagram.com/koka.group/" target="_blank"><img src="images/event-ambiance.jpg" alt="Ambiance lumineuse événement"></a>
+    </div>
+    <div class="gallery-cta">
+      <a href="https://www.instagram.com/koka.group/" target="_blank" class="btn btn-light">Suivez-nous sur Instagram</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <span class="label">Prêt à commencer ?</span>
+    <h2>Un projet <em>en tête ?</em></h2>
+    <p>Chaque événement est unique. Discutons du vôtre.</p>
+    <a href="contact.html" class="btn">Nous contacter</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <img src="images/logo.png" alt="KOKA Group" class="site-footer-logo">
+        <p>DJ & Animation musicale sur-mesure pour vos événements.</p>
+      </div>
+      <div class="site-footer-nav">
+        <span class="site-footer-heading">Navigation</span>
+        <a href="index.html">Accueil</a>
+        <a href="prestations.html">Prestations</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="site-footer-nav">
+        <span class="site-footer-heading">Suivez-nous</span>
+        <a href="https://www.instagram.com/koka.group/" target="_blank">Instagram</a>
+        <a href="https://soundcloud.com/koka-group" target="_blank">SoundCloud</a>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <span>© 2025 KOKA Group</span>
+    </div>
+  </footer>
+
+  <script src="script.js?v=750"></script>
+</body>
+</html>

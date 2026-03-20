@@ -362,7 +362,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .process{padding:4rem clamp(1.5rem,5vw,5rem)}
 .process-head{margin-bottom:3rem}
 .process-head h2{font-size:clamp(2rem,4vw,3.2rem);margin-top:.5rem}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.process-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3rem}
 .process-step{padding:2rem 0;border-top:1px solid var(--border)}
 .process-num{font-family:var(--fd);font-size:2.5rem;color:#8CB3D2;opacity:.3;display:block;margin-bottom:1rem}
 .process-step h3{font-family:var(--fd);font-size:1.3rem;margin-bottom:.6rem}
@@ -370,7 +370,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 
 .value-item{padding:1.5rem 0;border-top:1px solid var(--border)}
 .value-item h4{font-family:var(--fd);font-size:1.15rem;margin-bottom:.4rem}
-.value-item p{font-size:24px;color:var(--muted);line-height:1.7}
+.value-item p{font-size:14px;color:var(--muted);line-height:1.7}
 
 /* ===== VALUES — Editorial numbered list ===== */
 .values-ed{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;padding:4rem clamp(1.5rem,5vw,5rem);max-width:1200px;margin:0 auto}
@@ -395,9 +395,11 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .trust{padding:3rem clamp(1.5rem,5vw,5rem);text-align:center;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
 .trust .label{display:block;margin-bottom:2.5rem}
 .trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2.5rem 4rem}
-.trust-row img{height:55px;width:auto;max-width:160px;object-fit:contain;opacity:1}
+.trust-row img{height:55px;width:auto;max-width:160px;object-fit:contain;opacity:.7;filter:brightness(0) invert(1);transition:opacity .3s}
 .trust-row img:hover{opacity:1}
-.trust-row img[src$=".jpg"]{background:#fff;padding:8px 14px;border-radius:6px}
+.trust-row img[src$=".svg"]{filter:brightness(0) invert(1)}
+.trust-row img[src$=".jpg"]{filter:grayscale(1) brightness(1.5) invert(0);background:rgba(255,255,255,.08);padding:8px 14px;border-radius:6px}
+.trust-row img[src$=".png"]{filter:brightness(0) invert(1)}
 
 /* ===== QUOTE ===== */
 .quote-section{padding:5rem clamp(1.5rem,5vw,5rem);text-align:center;position:relative;background:#111}
@@ -618,7 +620,6 @@ cite{display:block;margin-top:2rem;font-family:var(--ff);font-size:24px;color:va
   .contact-section{flex-direction:column}
   .contact-sidebar{flex:auto;flex-direction:row;flex-wrap:wrap;gap:2rem}
   .wizard-field-row{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr 1fr}
   .values-ed{grid-template-columns:1fr;gap:2rem}
 }
 @media(max-width:768px){

@@ -188,7 +188,7 @@ em{color:var(--blue);font-style:italic}
 /* --- Header --- */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:1.6rem clamp(1.5rem,4vw,3.5rem);transition:all .6s var(--ease)}
 .header.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1rem clamp(1.5rem,4vw,3.5rem)}
-.logo img{height:42px;filter:brightness(0) invert(1);transition:height .4s var(--ease),opacity .5s var(--ease),transform .5s var(--ease)}
+.logo img{height:42px;width:auto;filter:brightness(0) invert(1);transition:height .4s var(--ease),opacity .5s var(--ease),transform .5s var(--ease)}
 .header.scrolled .logo img{height:34px}
 .header.hero-hidden{opacity:0;pointer-events:none;transform:translateY(-15px)}
 .header-nav{display:none}

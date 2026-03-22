@@ -124,10 +124,9 @@ if (heroVinyl) {
   // Image cycle with Ken Burns + dot color pulse + bg photo sync
   const vinylO = document.getElementById('vinylO');
   const dot = document.getElementById('vinylDot');
-  const heroBgPhoto = document.querySelector('#heroBgPhoto img');
+  const bgSlides = document.querySelectorAll('.hero-bg-img');
   if (vinylO && dot && typeof gsap !== 'undefined') {
     const slides = vinylO.querySelectorAll('.vinyl-o-img');
-    const bgImages = Array.from(slides).map(function(s) { return s.querySelector('img').src; });
     const colors = ['#C8A96E', '#5b8cc9', '#b97fbf', '#D4766A'];
     let current = 0;
     const HOLD = 3.5;
@@ -145,22 +144,19 @@ if (heroVinyl) {
       ct.set(dot, { background: colors[current], boxShadow: '0 0 25px ' + colors[current] + '80' });
       ct.to(dot, { scale: 1, opacity: 1, duration: .5, ease: 'back.out(2)' }, .5);
 
-      // Image crossfade
+      // Image crossfade in O
       ct.to(slides[prev], { opacity: 0, scale: 1.15, duration: .6, ease: 'power2.inOut' }, .2);
       ct.fromTo(slides[current], { opacity: 0, scale: .95 }, { opacity: 1, scale: 1, duration: .6, ease: 'power2.out' }, .35);
 
       // Ken Burns on new image
       ct.to(slides[current], { scale: 1.15, duration: HOLD, ease: 'none' }, .7);
 
-      // Sync background photo — timed to match O image crossfade exactly
-      if (heroBgPhoto) {
-        var slideImg = slides[current].querySelector('img');
-        var nextSrc = slideImg.src;
-        var nextSrcset = slideImg.srcset;
-        // Fade out at same time as O image (0.2s), swap during crossover, fade in with new O image
-        ct.to(heroBgPhoto, { opacity: 0, duration: .3, ease: 'power2.in' }, .2);
-        ct.call(function() { heroBgPhoto.src = nextSrc; heroBgPhoto.srcset = nextSrcset; }, null, .35);
-        ct.to(heroBgPhoto, { opacity: .18, duration: .5, ease: 'power2.out' }, .4);
+      // Background crossfade — instant swap via CSS class, perfectly synced
+      if (bgSlides.length) {
+        ct.call(function() {
+          bgSlides.forEach(function(bg) { bg.classList.remove('active'); });
+          if (bgSlides[current]) bgSlides[current].classList.add('active');
+        }, null, .2);
       }
     }
 

@@ -20,7 +20,8 @@ body{font-family:var(--ff);font-weight:400;background:var(--bg);color:var(--blac
 
 /* === BACKGROUND — Hero photo === */
 .hero-bg-photo{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hero-bg-photo img{width:100%;height:100%;object-fit:cover;opacity:.18;filter:grayscale(.4)}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:grayscale(.4);transition:opacity .6s ease}
+.hero-bg-img.active{opacity:.18}
 
 /* === COLOR UNIVERSE SYSTEM — Section-based === */
 [data-universe]{--u-bg:var(--bg);--u-text:var(--black);--u-muted:#aaa;--u-accent:#8CB3D2;--u-border:rgba(255,255,255,.07);--u-card:#0e0e0e;--u-img:grayscale(.5);

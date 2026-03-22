@@ -109,9 +109,12 @@
   <!-- HERO -->
   <section class="hero-vinyl" id="hero">
     <h1 class="sr-only">KOKA Group — DJ & Animation Musicale Sur-Mesure à Nantes et Poitiers</h1>
-    <!-- Background image — same as O portal, low opacity -->
+    <!-- Background images — all 4 preloaded, crossfade via opacity -->
     <div class="hero-bg-photo" id="heroBgPhoto">
-      <img src="images/couple-dance-lights.jpg" srcset="images/w400/couple-dance-lights.jpg 400w, images/w800/couple-dance-lights.jpg 800w, images/couple-dance-lights.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Ambiance dancefloor KOKA Group" width="1067" height="1600" fetchpriority="high">
+      <img class="hero-bg-img active" src="images/couple-dance-lights.jpg" srcset="images/w400/couple-dance-lights.jpg 400w, images/w800/couple-dance-lights.jpg 800w, images/couple-dance-lights.jpg 1920w" sizes="100vw" alt="" width="1067" height="1600" fetchpriority="high">
+      <img class="hero-bg-img" src="images/mariage-ouverture.jpg" srcset="images/w400/mariage-ouverture.jpg 400w, images/w800/mariage-ouverture.jpg 800w, images/mariage-ouverture.jpg 1920w" sizes="100vw" alt="" width="1600" height="1200" loading="lazy">
+      <img class="hero-bg-img" src="images/dj-dancefloor-view.jpg" srcset="images/w400/dj-dancefloor-view.jpg 400w, images/w800/dj-dancefloor-view.jpg 800w, images/dj-dancefloor-view.jpg 1920w" sizes="100vw" alt="" width="1200" height="1600" loading="lazy">
+      <img class="hero-bg-img" src="images/setup-gala.jpg" srcset="images/w400/setup-gala.jpg 400w, images/w800/setup-gala.jpg 800w, images/setup-gala.jpg 1920w" sizes="100vw" alt="" width="1600" height="900" loading="lazy">
     </div>
     <!-- KOKA logo SVG with O as image viewport -->
     <div class="vinyl-logo">
@@ -380,6 +383,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="script.js?v=760" defer></script>
+  <script src="script.js?v=761" defer></script>
 </body>
 </html>

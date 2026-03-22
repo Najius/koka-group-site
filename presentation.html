@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOKA Group — Refonte du site web</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--card:#111;--white:#f4f1ec;--muted:#999;--blue:#8CB3D2;--accent:#B8944E}
+body{background:var(--bg);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;scroll-behavior:smooth;overflow-x:hidden}
+.slide{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem 4rem;position:relative}
+.slide:nth-child(even){background:#0e0e0e}
+.slide-inner{max-width:1200px;width:100%;margin:0 auto}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.05;margin-bottom:1.5rem}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;margin-bottom:1.2rem}
+h3{font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:.8rem;color:var(--blue)}
+em{color:var(--blue);font-style:italic}
+p{font-size:18px;color:var(--muted);line-height:1.8;max-width:700px}
+.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:block}
+.accent{color:var(--accent)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.compare-col{background:var(--card);border-radius:12px;padding:2rem;border:1px solid rgba(255,255,255,.06)}
+.compare-col h3{margin-bottom:1rem}
+.compare-col.before h3{color:#D4766A}
+.compare-col.after h3{color:#4CAF50}
+.compare-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.compare-col li{font-size:16px;color:var(--muted);line-height:1.6;padding-left:1.2rem;position:relative}
+.compare-col li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:1px}
+.compare-col.before li::before{background:#D4766A}
+.compare-col.after li::before{background:#4CAF50}
+.screenshot{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.screenshot img{width:100%;display:block}
+.screenshot-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:.8rem}
+.score-table{width:100%;border-collapse:collapse;margin-top:2rem}
+.score-table th,.score-table td{padding:1rem 1.5rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.06);font-size:16px}
+.score-table th{font-family:'Syne',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.score-table td:nth-child(2){color:#D4766A}
+.score-table td:nth-child(3){color:#4CAF50;font-weight:400}
+.score-table tr:last-child td{font-family:'Syne',sans-serif;font-weight:700;font-size:20px;border-top:2px solid var(--blue)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2.5rem}
+.stat{text-align:center;padding:2rem;background:var(--card);border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+.stat-num{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--blue);display:block}
+.stat-label{font-size:14px;color:var(--muted);margin-top:.5rem;display:block}
+.next-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.next-step{padding:2rem;background:var(--card);border-radius:12px;border:1px solid rgba(255,255,255,.06);counter-increment:step}
+.next-step::before{content:counter(step);font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--blue);opacity:.3;display:block;margin-bottom:.5rem}
+.next-step h4{font-family:'Syne',sans-serif;font-size:1.1rem;margin-bottom:.5rem}
+.next-step p{font-size:15px;max-width:none}
+.hero-slide{text-align:center;flex-direction:column}
+.hero-slide h1{font-size:clamp(3rem,6vw,5.5rem);max-width:900px}
+.hero-slide p{margin:0 auto;text-align:center}
+.badge{display:inline-block;padding:8px 20px;border:1px solid var(--blue);border-radius:100px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-top:2rem}
+.mobile-frame{max-width:280px;margin:0 auto;border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,.1);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.mobile-frame img{width:100%;display:block}
+@media(max-width:768px){
+  .slide{padding:3rem 1.5rem}
+  .grid-2,.grid-3,.compare,.stat-grid,.next-steps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITRE -->
+<section class="slide hero-slide">
+  <div class="slide-inner" style="text-align:center">
+    <span class="label">Mars 2026</span>
+    <h1>KOKA Group<br>Refonte du <em>site web</em></h1>
+    <p style="margin:0 auto">Audit, refonte UX/UI, SEO, performance, accessibilite et internationalisation du site koka-group.com</p>
+    <div class="badge">Avant / Apres</div>
+  </div>
+</section>
+
+<!-- SLIDE 2: CONTEXTE -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Le contexte</span>
+    <h2>Un site qui ne rendait pas justice au <em>talent</em></h2>
+    <p>KOKA Group est un duo de DJs professionnels base a Nantes et Poitiers, specialise dans l'animation musicale sur-mesure : mariages, corporate, soirees privees et collaborations artistiques.</p>
+    <p style="margin-top:1rem">Le site en production presentait des limitations majeures qui freinaient la conversion et le referencement.</p>
+    <div class="compare">
+      <div class="compare-col before">
+        <h3>Problemes identifies</h3>
+        <ul>
+          <li>Pas de CTA dans le hero</li>
+          <li>Navigation uniquement en burger menu</li>
+          <li>Images placeholder (cercles bleus)</li>
+          <li>1 seule page, pas de contenu dedie</li>
+          <li>Pas de temoignages visibles</li>
+          <li>Pas de H1, 5 images sans alt</li>
+          <li>Aucune structured data SEO</li>
+        </ul>
+      </div>
+      <div class="compare-col after">
+        <h3>Objectifs de la refonte</h3>
+        <ul>
+          <li>Parcours de conversion optimise</li>
+          <li>Pages dediees par prestation</li>
+          <li>SEO technique et local</li>
+          <li>Site bilingue FR / EN</li>
+          <li>Performance et accessibilite</li>
+          <li>Preuve sociale (avis, logos)</li>
+          <li>Design premium fidelement maintenu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: AVANT/APRES DESIGN -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Design & Conversion</span>
+    <h2>Avant / Apres : <em>Homepage</em></h2>
+    <div class="compare" style="margin-top:2rem">
+      <div>
+        <div class="screenshot"><img src="screenshots/old-home.png" alt="Ancien site KOKA Group"></div>
+        <p class="screenshot-label">Avant — Site en production</p>
+      </div>
+      <div>
+        <div class="screenshot"><img src="screenshots/new-home.png" alt="Nouveau site KOKA Group"></div>
+        <p class="screenshot-label">Apres — Nouveau site</p>
+      </div>
+    </div>
+    <div class="stat-grid" style="margin-top:3rem">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">CTAs dans le hero</span></div>
+      <div class="stat"><span class="stat-num">5/5</span><span class="stat-label">Badge Mariages.net</span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">CTAs intermediaires</span></div>
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label">Logos de confiance</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: PAGES PRESTATIONS -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Contenu & Pages</span>
+    <h2>De 1 page a <em>18 pages</em></h2>
+    <p>Chaque prestation a maintenant sa propre page avec un contenu structure et unique.</p>
+    <div class="grid-3" style="margin-top:2rem">
+      <div>
+        <div class="screenshot"><img src="screenshots/new-mariages.png" alt="Page Mariages"></div>
+        <p class="screenshot-label">Mariages</p>
+      </div>
+      <div>
+        <div class="screenshot"><img src="screenshots/new-corporate.png" alt="Page Corporate"></div>
+        <p class="screenshot-label">Corporate</p>
+      </div>
+      <div>
+        <div class="screenshot"><img src="screenshots/new-prestations.png" alt="Page Prestations"></div>
+        <p class="screenshot-label">Prestations</p>
+      </div>
+    </div>
+    <div class="compare" style="margin-top:2rem">
+      <div class="compare-col after">
+        <h3>Structure par page</h3>
+        <ul>
+          <li>Panel approche + image</li>
+          <li>3 cartes sous-services</li>
+          <li>Section "Ce qui est inclus"</li>
+          <li>Temoignage client</li>
+          <li>Galerie photos</li>
+          <li>Timeline methode</li>
+          <li>FAQ structuree (schema.org)</li>
+          <li>Cross-links + CTA</li>
+        </ul>
+      </div>
+      <div class="compare-col after">
+        <h3>Pages creees</h3>
+        <ul>
+          <li>Mariages & celebrations</li>
+          <li>Corporate & seminaires</li>
+          <li>Soirees privees</li>
+          <li>Collaborations artistiques</li>
+          <li>DJ Mariage Nantes (SEO local)</li>
+          <li>DJ Mariage Poitiers (SEO local)</li>
+          <li>Page contact wizard 4 etapes</li>
+          <li>Page 404 personnalisee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: SEO -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">SEO & Referencement</span>
+    <h2>Un site construit pour <em>Google</em></h2>
+    <div class="compare">
+      <div class="compare-col before">
+        <h3>Avant</h3>
+        <ul>
+          <li>Title : "Accueil - KOKA Group"</li>
+          <li>Pas de H1</li>
+          <li>5 images sans alt text</li>
+          <li>Aucune structured data</li>
+          <li>Pas de sitemap exploitable</li>
+          <li>1 seule page indexable</li>
+        </ul>
+      </div>
+      <div class="compare-col after">
+        <h3>Apres</h3>
+        <ul>
+          <li>Title optimise avec mots-cles</li>
+          <li>H1 unique par page</li>
+          <li>Alt texts sur 100% des images</li>
+          <li>7 types de structured data</li>
+          <li>Sitemap 18 URLs</li>
+          <li>Hreflang FR/EN + x-default</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stat-grid" style="margin-top:2rem">
+      <div class="stat"><span class="stat-num">18</span><span class="stat-label">Pages indexables</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Types de schema.org</span></div>
+      <div class="stat"><span class="stat-num">22</span><span class="stat-label">Questions FAQ</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Pages SEO locales</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: PERFORMANCE & ACCESSIBILITE -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Performance & Accessibilite</span>
+    <h2>Plus rapide, plus <em>accessible</em></h2>
+    <div class="grid-2">
+      <div>
+        <h3>Performance</h3>
+        <div class="compare-col after" style="margin-top:1rem">
+          <ul>
+            <li>DOM reduit de 542 a 274 elements</li>
+            <li>102 images WebP (gain 45%)</li>
+            <li>Fonts : 9 a 5 poids</li>
+            <li>Lazy loading 79%</li>
+            <li>Preload LCP pages principales</li>
+            <li>Cache immutable, JS defer</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3>Accessibilite</h3>
+        <div class="compare-col after" style="margin-top:1rem">
+          <ul>
+            <li>Skip-link toutes pages</li>
+            <li>aria-expanded, aria-label</li>
+            <li>:focus-visible personnalise</li>
+            <li>Contraste WCAG AA</li>
+            <li>prefers-reduced-motion</li>
+            <li>Cursor fallback si JS echoue</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: INTERNATIONALISATION -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Internationalisation</span>
+    <h2>Un site <em>bilingue</em> FR / EN</h2>
+    <p>8 pages francaises + 8 pages anglaises avec switcher de langue, structured data traduite et hreflang bidirectionnel.</p>
+    <div class="grid-2" style="margin-top:2rem">
+      <div>
+        <div class="screenshot"><img src="screenshots/new-home.png" alt="Homepage FR"></div>
+        <p class="screenshot-label">Version francaise</p>
+      </div>
+      <div>
+        <div class="screenshot"><img src="screenshots/new-home-en.png" alt="Homepage EN"></div>
+        <p class="screenshot-label">Version anglaise</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem;color:var(--blue);font-size:14px;letter-spacing:1px">Langues parlees : Francais, Anglais, Espagnol, Italien</p>
+  </div>
+</section>
+
+<!-- SLIDE 8: CONCURRENCE -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Analyse concurrentielle</span>
+    <h2>Positionne au-dessus de la <em>concurrence</em></h2>
+    <div class="grid-3" style="margin-top:2rem">
+      <div class="compare-col" style="border-color:rgba(255,255,255,.04)">
+        <h3 style="color:var(--muted)">Arnaud Events</h3>
+        <ul>
+          <li>5/5 Mariages.net</li>
+          <li>Bon SEO local</li>
+          <li>Solo, pas de duo</li>
+          <li>Pas d'artistique</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:rgba(255,255,255,.04)">
+        <h3 style="color:var(--muted)">Atlantic'Anim</h3>
+        <ul>
+          <li>20+ ans d'experience</li>
+          <li>Blog SEO actif</li>
+          <li>Design vieillissant</li>
+          <li>Positionnement generique</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--blue)">
+        <h3 style="color:var(--blue)">KOKA Group</h3>
+        <ul>
+          <li>Seul duo de DJs</li>
+          <li>Positionnement premium</li>
+          <li>Compositions Ableton</li>
+          <li>Site superieur en UX</li>
+          <li>Bilingue FR/EN</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: SCORES -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Resultats</span>
+    <h2>Score global : <em>5/10 a 8/10</em></h2>
+    <table class="score-table">
+      <thead><tr><th>Critere</th><th>Avant</th><th>Apres</th></tr></thead>
+      <tbody>
+        <tr><td>Design & identite</td><td>7/10</td><td>8.5/10</td></tr>
+        <tr><td>UX / Conversion</td><td>5/10</td><td>9/10</td></tr>
+        <tr><td>SEO technique</td><td>4/10</td><td>8.5/10</td></tr>
+        <tr><td>Accessibilite</td><td>4/10</td><td>8/10</td></tr>
+        <tr><td>Performance</td><td>5/10</td><td>8/10</td></tr>
+        <tr><td>Contenu</td><td>5/10</td><td>7.5/10</td></tr>
+        <tr><td>Internationalisation</td><td>0/10</td><td>8/10</td></tr>
+        <tr><td>Score global</td><td>5/10</td><td>8/10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SLIDE 10: PROCHAINES ETAPES -->
+<section class="slide">
+  <div class="slide-inner">
+    <span class="label">Pour aller plus loin</span>
+    <h2>Prochaines etapes pour atteindre <em>9/10</em></h2>
+    <div class="next-steps" style="counter-reset:step">
+      <div class="next-step">
+        <h4>Google Business Profile</h4>
+        <p>Creer la fiche Google pour apparaitre dans le pack local. Priorite n1 pour le SEO.</p>
+      </div>
+      <div class="next-step">
+        <h4>Avis Google</h4>
+        <p>Collecter 20 avis clients en 6 mois. Chaque avis renforce la credibilite.</p>
+      </div>
+      <div class="next-step">
+        <h4>Blog SEO</h4>
+        <p>Articles cibles : "Combien coute un DJ mariage", "Comment choisir son DJ"...</p>
+      </div>
+      <div class="next-step">
+        <h4>Video aftermovie</h4>
+        <p>Un embed YouTube sur la homepage pour montrer l'ambiance en live.</p>
+      </div>
+      <div class="next-step">
+        <h4>Annuaires DJ</h4>
+        <p>Inscription sur 1001dj, Livetonight, Linkaband pour les backlinks.</p>
+      </div>
+      <div class="next-step">
+        <h4>Portfolio</h4>
+        <p>Page dediee avec les evenements realises, lieux et photos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11: MERCI -->
+<section class="slide hero-slide">
+  <div class="slide-inner" style="text-align:center">
+    <h1>Merci</h1>
+    <p style="margin:0 auto;font-size:20px;color:var(--white);opacity:.7">KOKA Group — koka-group.com</p>
+    <p style="margin:1rem auto 0;font-size:16px">Un site a la hauteur de votre ambition.</p>
+    <div style="margin-top:3rem;display:flex;gap:2rem;justify-content:center">
+      <div class="mobile-frame" style="max-width:180px"><img src="screenshots/new-home-mobile.png" alt="Site mobile"></div>
+      <div class="screenshot" style="max-width:600px"><img src="screenshots/new-home.png" alt="Site desktop"></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

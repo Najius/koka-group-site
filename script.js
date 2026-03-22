@@ -2,6 +2,21 @@
    KOKA GROUP — Script
    ========================================================= */
 
+/* --- WebP Support: swap .jpg/.jpeg src to .webp if supported --- */
+(function() {
+  var webpSupport = false;
+  var img = new Image();
+  img.onload = function() { webpSupport = (img.width > 0 && img.height > 0); if (webpSupport) swapToWebp(); };
+  img.onerror = function() { webpSupport = false; };
+  img.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+  function swapToWebp() {
+    document.querySelectorAll('img[src$=".jpg"], img[src$=".jpeg"]').forEach(function(el) {
+      el.src = el.src.replace(/\.jpe?g$/, '.webp');
+      if (el.srcset) el.srcset = el.srcset.replace(/\.jpe?g /g, '.webp ');
+    });
+  }
+})();
+
 // Register GSAP plugins
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -420,14 +435,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       { trigger: v, start: 'top 88%', once: true });
   });
 }
-
-/* --- Contact Form --- */
-const form = document.querySelector('.contact-form');
-if (form) form.addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Merci ! Votre message a bien été envoyé.');
-  form.reset();
-});
 
 /* --- Smooth Anchors --- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

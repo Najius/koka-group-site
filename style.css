@@ -101,6 +101,10 @@ em{color:var(--blue);font-style:italic}
 .cursor.hovering{width:48px;height:48px;background:rgba(140,179,210,.08);border-color:rgba(140,179,210,.4)}
 .cursor-dot{position:fixed;top:0;left:0;width:4px;height:4px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
 
+/* Focus visible */
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
 /* Magnetic button effect */
 .btn,.btn-cta,.btn-submit{transition:all .4s var(--ease);will-change:transform}
 .btn:hover,.btn-cta:hover,.btn-submit:hover{transform:scale(1.05)}

@@ -689,8 +689,23 @@ a.presta-card:hover h4{color:var(--blue)}
 @media(max-width:768px){
   .header-nav{display:none}
   .burger{display:flex}
+  /* Header: prevent overflow */
+  .header{padding:1rem 1rem}
+  .header.scrolled{padding:.8rem 1rem}
+  .header-actions{gap:.8rem}
+  /* Hero */
+  .hero-vinyl{min-height:auto;padding:5rem 1rem 2rem}
+  .vinyl-logo{width:90vw}
+  .hero-cta{margin-top:1.5rem}
+  .hero-tagline{font-size:15px}
+  .hero-buttons{flex-direction:column;align-items:center;gap:.8rem}
   .hero-text h1{font-size:clamp(2.5rem,12vw,4rem)}
   .vinyl-presta{flex-direction:column;gap:.3rem}
+  /* Presta nav: scroll horizontal */
+  .presta-nav{gap:0;padding:.8rem 1rem;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .presta-nav::-webkit-scrollbar{display:none}
+  .presta-nav-link{flex-shrink:0;font-size:10px;padding:.4rem .8rem}
+  /* Grids */
   .services-grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .site-footer-inner{grid-template-columns:1fr;gap:2rem;text-align:center}
@@ -699,6 +714,23 @@ a.presta-card:hover h4{color:var(--blue)}
   .presta-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .page-hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}
-  .cat-head .cat-num{font-size:6rem}
+  .page-hero-clean{padding:7rem 1.5rem 3rem}
+  .cat-head .cat-num{font-size:4rem}
+  .cat-head h2{font-size:clamp(1.6rem,6vw,2.5rem)}
   .process-steps{grid-template-columns:1fr}
+  /* About */
+  .about-hero{padding:6rem 1.5rem;min-height:auto}
+  .about-img{max-height:300px}
+  .about-split{min-height:auto}
+  .about-body{padding:3rem 1.5rem}
+  /* Cross-links */
+  .cross-links-grid{flex-direction:column;align-items:center}
+  /* Section CTA */
+  .section-cta{padding:1.5rem 1rem 3rem}
+  /* Members */
+  .member{padding:2.5rem 1.5rem}
+  .member-portrait{max-width:180px}
+  /* FAQ */
+  .faq-question{font-size:.95rem;padding:1.2rem 0}
+  .faq-answer p{font-size:16px}
 }

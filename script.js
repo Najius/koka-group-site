@@ -256,21 +256,32 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     if (!hero) return;
 
     var cfg = function(end) {
-      return { trigger: hero, start: 'top top', end: end || '45% top', scrub: 0.4 };
+      return { trigger: hero, start: 'top top', end: end || '50% top', scrub: 0.6 };
     };
 
-    // Letter layers — explosive parallax: each letter scatters in its own direction
-    gsap.to('#layerK1', { y: -300, x: -120, rotation: -15, scale: 0.6, opacity: 0, ease: 'power1.in', scrollTrigger: cfg() });
-    gsap.to('#layerK2', { y: -200, x: 80, rotation: 12, scale: 0.7, opacity: 0, ease: 'power1.in', scrollTrigger: cfg() });
-    gsap.to('#layerA', { y: -350, x: 150, rotation: 18, scale: 0.5, opacity: 0, ease: 'power1.in', scrollTrigger: cfg() });
+    // Whole logo sinks together
+    var letterTl = gsap.timeline({ scrollTrigger: cfg() });
+    letterTl.to('.vinyl-logo', { y: 200, duration: 1, ease: 'power2.out' }, 0);
+    letterTl.to('.vinyl-logo', { opacity: 0, duration: 0.5, ease: 'power2.in' }, 0.3);
 
-    // Portal — shrinks and fades dramatically
-    gsap.to('.vinyl-portal', { y: -150, scale: 0.3, opacity: 0, ease: 'power1.in', scrollTrigger: cfg() });
+    // Individual letters scatter from the shared movement
+    letterTl.to('#layerK1', { y: 100, x: -80, rotation: 8, scale: 0.85, duration: 1, ease: 'power2.out' }, 0);
+    letterTl.to('#layerK2', { y: 50, x: 60, rotation: -6, scale: 0.9, duration: 1, ease: 'power2.out' }, 0);
+    letterTl.to('#layerA', { y: 150, x: 100, rotation: -10, scale: 0.8, duration: 1, ease: 'power2.out' }, 0);
 
-    // "group" label — drifts down-right and fades
-    gsap.fromTo('.vinyl-group-label', { opacity: 0.5, y: 0, x: 0 }, { y: 80, x: 60, opacity: 0, ease: 'power1.in', scrollTrigger: cfg() });
+    // Dot — spins as it falls
+    letterTl.to('#vinylDot', { rotation: 360, scale: 0.5, duration: 1, ease: 'power2.in' }, 0);
 
-    // Scroll hint disappears immediately
+    // "group" label — drifts and fades
+    letterTl.fromTo('.vinyl-group-label', { opacity: 0.5, y: 0, x: 0 }, { y: 120, x: 30, opacity: 0, duration: 0.8, ease: 'power2.inOut' }, 0.1);
+
+    // Hero background fades out
+    letterTl.to('.hero-bg-photo', { opacity: 0, duration: 0.6, ease: 'power2.in' }, 0.3);
+
+    // Hero CTA fades out
+    letterTl.to('.hero-cta', { opacity: 0, y: 40, duration: 0.5, ease: 'power2.in' }, 0.1);
+
+    // Scroll hint disappears early
     gsap.to('.hero-scroll', { opacity: 0, y: 60, ease: 'none', scrollTrigger: cfg('15% top') });
   })();
 

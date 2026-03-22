@@ -150,7 +150,7 @@ em{color:var(--blue);font-style:italic}
 
 /* Quote section — accent bar */
 .presta-sep blockquote,.quote-section blockquote{position:relative;padding-left:2rem}
-.presta-sep blockquote::before,.quote-section blockquote::before{content:'';position:absolute;left:0;top:.5em;width:3px;height:1.5em;background:var(--blue);border-radius:2px}
+.presta-sep blockquote::before{content:'';position:absolute;left:0;top:.5em;width:3px;height:1.5em;background:var(--blue);border-radius:2px}
 
 /* --- Label --- */
 .label{display:inline-block;font-family:var(--ff);font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--blue)}
@@ -669,7 +669,7 @@ a.presta-card:hover h4{color:var(--blue)}
 .section-cta{text-align:center;padding:2rem clamp(1.5rem,5vw,5rem) 4rem}
 
 /* Testimonial slider */
-.testimonial-slider{position:relative;width:100%;max-width:650px;min-height:220px;margin-top:1.5rem}
+.testimonial-slider{position:relative;width:100%;max-width:650px;min-height:300px;margin-top:1.5rem}
 .testimonial{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
 .testimonial.active{opacity:1;transform:translateY(0);pointer-events:auto}
 

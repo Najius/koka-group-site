@@ -735,3 +735,4 @@ a.presta-card:hover h4{color:var(--blue)}
   .faq-question{font-size:.95rem;padding:1.2rem 0}
   .faq-answer p{font-size:16px}
 }
+.hidden{display:none}

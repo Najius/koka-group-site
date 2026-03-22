@@ -1,20 +1,51 @@
 # KOKA Group - DJ & Animation Musicale Sur-Mesure
 
-## About
-KOKA Group is a professional DJ and event animation agency based in Nantes and Poitiers, France. Founded in 2022 by Camille Bouillet and Colin Fontaine, the agency specializes in bespoke musical experiences for weddings, corporate events, private parties, and artistic collaborations.
+> KOKA Group est un duo de DJs professionnels basé à Nantes et Poitiers, proposant des services d'animation musicale sur-mesure pour tous types d'événements en France et à l'international.
+
+## À propos / About
+KOKA Group is a professional DJ and event animation agency based in Nantes and Poitiers, France. Founded in 2022 by Camille Bouillet and Colin Fontaine, the agency specializes in bespoke musical experiences.
+
+## Fondateurs / Founders
+- **Camille Bouillet** — DJ depuis 2014, fondateur de l'association Book'n Co, passionné de Big Beat, Jungle, Rock Indé et Jazz.
+- **Colin Fontaine** — Major de promo UCPA École des DJ (2016), +1.3M streams Spotify avec Carbon Killer, DJ régulier au BB25 (Bordeaux) et La Locomotive (Poitiers).
 
 ## Services
-- Wedding DJ & Animation (ceremony, cocktail, reception, dancefloor)
-- Corporate Events (seminars, galas, company parties, team buildings)
-- Private Parties (garden parties, pool parties, birthdays, concept events)
-- Artistic Collaborations (fashion shows, art exhibitions, sound installations)
+### Particuliers
+- Mariages (cérémonie, cocktail, dîner, soirée dansante)
+- Anniversaires
+- EVG / EVJF
+- Soirées privées (garden party, pool party, fête concept)
 
-## Coverage
-- Based in Nantes and Poitiers, Pays de la Loire / Nouvelle-Aquitaine, France
-- Available throughout France and internationally
+### Professionnels
+- Séminaires & Corporate
+- Soirées étudiantes
+- Animation sur salon
+- Présentation produit / Inauguration
+- After party
+
+### Artistique
+- Défilés de mode (compositions originales sur Ableton)
+- Installations sonores (musées, galeries, expositions)
+- Mix pour concert (premières parties)
+
+## Zone d'intervention / Coverage
+- Basés à Nantes (Pays de la Loire) et Poitiers (Nouvelle-Aquitaine)
+- Intervention dans toute la France et à l'international
+- Langues : Français, Anglais, Espagnol, Italien
+
+## FAQ
+- **Quels styles musicaux ?** — Éclectiques : house, disco, funk, rock, hip-hop, électro, variétés françaises et internationales. Playlist personnalisée selon vos goûts.
+- **Quelles régions ?** — Basés à Nantes et Poitiers, nous intervenons partout en France (Pays de la Loire, Nouvelle-Aquitaine, Île-de-France, etc.) et à l'international.
+- **Quel matériel ?** — Sono professionnelle, éclairages LED, machines à fumée, contrôleurs DJ Pioneer/Denon. Matériel adapté à la taille du lieu.
+- **Comment réserver ?** — Contactez-nous via le formulaire, WhatsApp ou email. Nous répondons sous 24h avec un devis personnalisé.
 
 ## Contact
 - Website: https://koka-group.com
 - Instagram: https://www.instagram.com/koka.group/
+- SoundCloud: https://soundcloud.com/koka-group
 - Phone: +33 7 68 08 00 80
 - Email: contact@koka-group.com
+- WhatsApp: https://wa.me/33768080080
+
+## Références clients
+La Cigale, IESEG, Futuroscope, UCPA, Hôtel Alteora, La Locomotive, White Babel, Shaârghot

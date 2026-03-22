@@ -24,8 +24,7 @@
 
 </head>
 <body>
-
-
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 
   <header class="header header--filled" data-header-universe="soirees">
@@ -51,9 +50,13 @@
     </ul></nav>
   </div>
 
+  <main id="main-content">
   <section class="contact-section" data-universe="soirees">
 
     <!-- WIZARD FORM -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
     <div class="wizard" id="wizard">
       <!-- Progress -->
       <div class="wizard-progress">
@@ -165,6 +168,7 @@
         </div>
       </div>
     </div>
+    </form>
 
     <!-- SIDEBAR: Contact direct -->
     <div class="contact-sidebar">
@@ -190,6 +194,7 @@
     </div>
 
   </section>
+  </main>
 
       <footer class="site-footer">      <div class="site-footer-inner">        <div class="site-footer-brand">          <img src="images/logo.png" alt="KOKA Group" width="350" height="159" class="site-footer-logo">          <p>DJ &amp; Animation musicale sur-mesure pour vos événements.</p>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Navigation</span>          <a href="index.html">Accueil</a>          <a href="prestations.html">Prestations</a>          <a href="a-propos.html">À propos</a>          <a href="contact.html">Contact</a>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Suivez-nous</span>          <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener">Instagram</a>          <a href="https://soundcloud.com/koka-group" target="_blank" rel="noopener">SoundCloud</a>        </div>      </div>      <div class="site-footer-bottom">        <a href="mentions-legales.html">Mentions légales</a>        <span>© 2026 KOKA Group</span>      </div>    </footer>
 

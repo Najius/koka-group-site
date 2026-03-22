@@ -674,10 +674,12 @@ a.presta-card:hover h4{color:var(--blue)}
 .testimonial:first-child{position:relative}
 .testimonial.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative}
 
-/* Reviews link */
-.reviews-link{text-align:center;padding:0 0 3rem;margin-top:-2rem}
-.reviews-link a{font-size:13px;color:var(--blue);letter-spacing:1px;transition:opacity .3s}
-.reviews-link a:hover{opacity:.7}
+/* Mariages.net section */
+.mariages-net-section{display:flex;flex-direction:column;align-items:center;gap:2rem;padding:3rem clamp(1.5rem,5vw,5rem);text-align:center}
+.mariages-net-badge{display:flex;justify-content:center}
+.mariages-net-reviews{max-width:800px;width:100%}
+.reviews-link-text{font-size:13px;color:var(--blue);letter-spacing:1px;transition:opacity .3s}
+.reviews-link-text:hover{opacity:.7}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){

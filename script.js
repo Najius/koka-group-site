@@ -152,11 +152,11 @@ if (heroVinyl) {
       // Ken Burns on new image
       ct.to(slides[current], { scale: 1.15, duration: HOLD, ease: 'none' }, .7);
 
-      // Sync background photo
+      // Sync background photo — same timing as O image crossfade
       if (heroBgPhoto) {
-        ct.to(heroBgPhoto, { opacity: 0, duration: .4, ease: 'power2.in' }, .1);
-        ct.call(function() { heroBgPhoto.src = bgImages[current]; }, null, .5);
-        ct.to(heroBgPhoto, { opacity: .1, duration: .6, ease: 'power2.out' }, .6);
+        ct.to(heroBgPhoto, { opacity: 0, duration: .5, ease: 'power2.in' }, .2);
+        ct.call(function() { heroBgPhoto.src = bgImages[current]; }, null, .7);
+        ct.to(heroBgPhoto, { opacity: .18, duration: .6, ease: 'power2.out' }, .75);
       }
     }
 

@@ -33,14 +33,18 @@ if (typeof ScrollTrigger !== 'undefined') {
 const burger = document.querySelector('.burger');
 const navOverlay = document.querySelector('.nav-overlay');
 if (burger && navOverlay) {
+  burger.setAttribute('aria-expanded', 'false');
   burger.addEventListener('click', () => {
     burger.classList.toggle('active');
     navOverlay.classList.toggle('active');
-    document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
+    var isOpen = navOverlay.classList.contains('active');
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   navOverlay.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
     burger.classList.remove('active');
     navOverlay.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }));
 }
@@ -520,6 +524,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* --- Custom Cursor (desktop only) --- */
 if (window.matchMedia('(pointer:fine)').matches) {
+  document.documentElement.classList.add('has-custom-cursor');
   const cursor = document.createElement('div');
   cursor.className = 'cursor';
   document.body.appendChild(cursor);

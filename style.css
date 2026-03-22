@@ -6,7 +6,7 @@
 :root{
   --bg:#0a0a0a;--bg-dark:#111;--card:#0e0e0e;
   --black:#F4F1EC;--dark:#e0ddd7;--white:#F4F1EC;
-  --muted:#999;--dim:#777;
+  --muted:#999;--dim:#aaa;
   --blue:#8CB3D2;--blue-dark:#8CB3D2;
   --mariage:#C8A96E;--corporate:#5b8cc9;--artistique:#b97fbf;--soirees:#D4766A;
   --border:rgba(255,255,255,.07);
@@ -23,12 +23,12 @@ body{font-family:var(--ff);font-weight:400;background:var(--bg);color:var(--blac
 .hero-bg-photo img{width:100%;height:100%;object-fit:cover;opacity:.1;filter:grayscale(.6)}
 
 /* === COLOR UNIVERSE SYSTEM — Section-based === */
-[data-universe]{--u-bg:var(--bg);--u-text:var(--black);--u-muted:#777;--u-accent:#8CB3D2;--u-border:rgba(255,255,255,.07);--u-card:#0e0e0e;--u-img:grayscale(.5);
+[data-universe]{--u-bg:var(--bg);--u-text:var(--black);--u-muted:#aaa;--u-accent:#8CB3D2;--u-border:rgba(255,255,255,.07);--u-card:#0e0e0e;--u-img:grayscale(.5);
   background-color:var(--u-bg);color:var(--u-text);position:relative}
 
-[data-universe="mariages"]{--u-bg:#FAF8F5;--u-text:#1a1714;--u-muted:#6b6560;--u-accent:#B8944E;--u-border:rgba(0,0,0,.08);--u-card:#F0EDE8;--u-img:none}
+[data-universe="mariages"]{--u-bg:#FAF8F5;--u-text:#1a1714;--u-muted:#5a504a;--u-accent:#B8944E;--u-border:rgba(0,0,0,.08);--u-card:#F0EDE8;--u-img:none}
 [data-universe="corporate"]{--u-bg:#080c14;--u-text:#dce4ee;--u-muted:#7a8ea8;--u-accent:#5b8cc9;--u-border:rgba(255,255,255,.08);--u-card:#0e1420;--u-img:grayscale(.4) brightness(.85)}
-[data-universe="soirees"]{--u-bg:#0a0a0a;--u-text:#F4F1EC;--u-muted:#777;--u-accent:#D4766A;--u-border:rgba(255,255,255,.07);--u-card:#151515;--u-img:grayscale(.3) brightness(.8)}
+[data-universe="soirees"]{--u-bg:#0a0a0a;--u-text:#F4F1EC;--u-muted:#aaa;--u-accent:#D4766A;--u-border:rgba(255,255,255,.07);--u-card:#151515;--u-img:grayscale(.3) brightness(.8)}
 [data-universe="artistique"]{--u-bg:#0e0610;--u-text:#e8dce8;--u-muted:#9a7fa0;--u-accent:#b97fbf;--u-border:rgba(255,255,255,.08);--u-card:#1a0e1e;--u-img:grayscale(.3) brightness(.85)}
 
 /* Universe inner styling */
@@ -92,10 +92,10 @@ em{color:var(--blue);font-style:italic}
 
 /* === GLOBAL DYNAMICS === */
 
-/* Custom cursor */
+/* Custom cursor — only hide native cursor when JS cursor is active */
 @media(pointer:fine){
-  html{cursor:none}
-  a,button,.svc-card,.presta-card,.gallery-grid a{cursor:none}
+  html.has-custom-cursor{cursor:none}
+  .has-custom-cursor a,.has-custom-cursor button,.has-custom-cursor .svc-card,.has-custom-cursor .presta-card,.has-custom-cursor .gallery-grid a{cursor:none}
 }
 .cursor{position:fixed;top:0;left:0;width:16px;height:16px;border:1.5px solid var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s,background .3s}
 .cursor.hovering{width:48px;height:48px;background:rgba(140,179,210,.08);border-color:rgba(140,179,210,.4)}
@@ -759,4 +759,20 @@ a.presta-card:hover h4{color:var(--blue)}
   .faq-question{font-size:.95rem;padding:1.2rem 0}
   .faq-answer p{font-size:16px}
 }
+/* ===== TABLET (768-1024) ===== */
+@media(min-width:769px) and (max-width:1024px){
+  .process-steps .process-step{padding-right:1rem}
+  .process-step h3{font-size:1rem}
+  .process-step p{font-size:13px}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+  .letter-ghost{animation:none !important}
+  .vinyl-dot{animation:none !important}
+  .vinyl-portal::before{animation:none !important}
+  .marquee-track{animation:none !important}
+}
+
 .hidden{display:none}

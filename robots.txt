@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /font-test.html
 
 Sitemap: https://koka-group.com/sitemap.xml

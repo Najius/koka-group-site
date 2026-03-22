@@ -199,6 +199,8 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .header.hero-hidden{opacity:0;pointer-events:none;transform:translateY(-15px)}
 .header-nav{display:flex;align-items:center;gap:2.5rem}
 .header-actions{display:flex;align-items:center;gap:1.2rem}
+.lang-switch{font-family:var(--ff);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:6px 10px;border:1px solid var(--border);border-radius:4px;transition:all .3s var(--ease)}
+.lang-switch:hover{color:var(--white);border-color:var(--blue)}
 .header-wa{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;transition:all .3s var(--ease);z-index:1001}
 .header-wa:hover{background:#1ebe5a;color:#fff;transform:scale(1.1)}
 .header-wa svg{display:block}

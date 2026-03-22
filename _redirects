@@ -10,6 +10,15 @@
 /dj-mariage-nantes   /dj-mariage-nantes.html   200
 /dj-mariage-poitiers /dj-mariage-poitiers.html 200
 
+# English clean URLs
+/en/prestations  /en/prestations.html  200
+/en/mariages     /en/mariages.html     200
+/en/corporate    /en/corporate.html    200
+/en/soirees      /en/soirees.html      200
+/en/artistique   /en/artistique.html   200
+/en/a-propos     /en/a-propos.html     200
+/en/contact      /en/contact.html      200
+
 # Old WordPress URL redirects
 /prestations-seminaires-soirees-privees-installations/  /prestations.html  301
 /a-propos-agence-evenementielle-nantes/                 /a-propos.html     301

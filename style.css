@@ -105,6 +105,7 @@ em{color:var(--blue);font-style:italic}
 /* Focus visible */
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
 /* Magnetic button effect */
 .btn,.btn-cta,.btn-submit{transition:all .4s var(--ease);will-change:transform}
@@ -232,10 +233,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .btn-cta::before{background:var(--white)}
 .btn-cta:hover{border-color:var(--white);color:var(--bg)}
 
-/* --- Focus styles (accessibility) --- */
-.btn:focus-visible,.btn-cta:focus-visible,.btn-submit:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
 /* ===== HERO VINYL ===== */
 .hero-vinyl{min-height:85vh;min-height:85svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:2rem clamp(1.5rem,5vw,5rem);padding-bottom:2rem}

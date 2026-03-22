@@ -196,7 +196,7 @@ em{color:var(--blue);font-style:italic}
 .header-wa{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;transition:all .3s var(--ease);z-index:1001}
 .header-wa:hover{background:#1ebe5a;color:#fff;transform:scale(1.1)}
 .header-wa svg{display:block}
-.burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:7px;padding:12px;z-index:1001}
+.burger{background:none;border:none;cursor:pointer;display:none;flex-direction:column;gap:7px;padding:12px;z-index:1001}
 .burger span{width:32px;height:2px;background:var(--white);transition:all .4s var(--ease);display:block}
 .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
 .burger.active span:nth-child(2){opacity:0}
@@ -688,6 +688,7 @@ a.presta-card:hover h4{color:var(--blue)}
 }
 @media(max-width:768px){
   .header-nav{display:none}
+  .burger{display:flex}
   .hero-text h1{font-size:clamp(2.5rem,12vw,4rem)}
   .vinyl-presta{flex-direction:column;gap:.3rem}
   .services-grid{grid-template-columns:1fr}

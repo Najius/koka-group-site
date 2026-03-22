@@ -668,6 +668,16 @@ a.presta-card:hover h4{color:var(--blue)}
 /* Section intermediate CTA */
 .section-cta{text-align:center;padding:2rem clamp(1.5rem,5vw,5rem) 4rem}
 
+/* Testimonial slider */
+.testimonial-slider{position:relative;min-height:180px}
+.testimonial{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .8s ease}
+.testimonial.active{opacity:1;position:relative}
+
+/* Reviews link */
+.reviews-link{text-align:center;padding:0 0 3rem;margin-top:-2rem}
+.reviews-link a{font-size:13px;color:var(--blue);letter-spacing:1px;transition:opacity .3s}
+.reviews-link a:hover{opacity:.7}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .hero-vinyl{min-height:auto;padding:6rem 1.5rem 3rem}

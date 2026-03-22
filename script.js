@@ -581,3 +581,17 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
     btn.style.transform = '';
   });
 });
+
+/* --- Testimonial slider --- */
+(function() {
+  var slider = document.getElementById('testimonialSlider');
+  if (!slider) return;
+  var items = slider.querySelectorAll('.testimonial');
+  if (items.length < 2) return;
+  var current = 0;
+  setInterval(function() {
+    items[current].classList.remove('active');
+    current = (current + 1) % items.length;
+    items[current].classList.add('active');
+  }, 5000);
+})();

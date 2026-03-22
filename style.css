@@ -251,6 +251,53 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .hero-vinyl.is-loaded #layerK2{animation:letterEnter 1s cubic-bezier(.22,1,.36,1) .35s both}
 .hero-vinyl.is-loaded #layerA{animation:letterEnter 1s cubic-bezier(.22,1,.36,1) .5s both}
 
+/* --- Ghost outlines: floating stroke copies --- */
+.letter-ghost{pointer-events:none!important;opacity:0}
+.hero-vinyl.is-loaded .letter-ghost{opacity:1}
+
+/* Ghost A layers: drift + pulse opacity */
+.hero-vinyl.is-loaded .ghost-k1-a{animation:ghostDriftA 6s ease-in-out 1s both infinite}
+.hero-vinyl.is-loaded .ghost-k1-b{animation:ghostDriftB 8s ease-in-out 1.5s both infinite}
+.hero-vinyl.is-loaded .ghost-k2-a{animation:ghostDriftC 7s ease-in-out 1.2s both infinite}
+.hero-vinyl.is-loaded .ghost-k2-b{animation:ghostDriftD 9s ease-in-out 2s both infinite}
+.hero-vinyl.is-loaded .ghost-a-a{animation:ghostDriftE 6.5s ease-in-out 1.4s both infinite}
+.hero-vinyl.is-loaded .ghost-a-b{animation:ghostDriftF 8.5s ease-in-out 1.8s both infinite}
+
+@keyframes ghostDriftA{
+  0%,100%{transform:translate(0,0);opacity:.6}
+  25%{transform:translate(-6px,-4px);opacity:1}
+  50%{transform:translate(-3px,5px);opacity:.3}
+  75%{transform:translate(4px,-2px);opacity:.8}
+}
+@keyframes ghostDriftB{
+  0%,100%{transform:translate(0,0);opacity:.4}
+  30%{transform:translate(8px,6px);opacity:.9}
+  60%{transform:translate(-5px,-8px);opacity:.2}
+}
+@keyframes ghostDriftC{
+  0%,100%{transform:translate(0,0);opacity:.5}
+  20%{transform:translate(5px,-6px);opacity:1}
+  50%{transform:translate(-4px,4px);opacity:.2}
+  80%{transform:translate(3px,7px);opacity:.7}
+}
+@keyframes ghostDriftD{
+  0%,100%{transform:translate(0,0);opacity:.3}
+  35%{transform:translate(-7px,5px);opacity:.8}
+  65%{transform:translate(6px,-4px);opacity:.15}
+}
+@keyframes ghostDriftE{
+  0%,100%{transform:translate(0,0);opacity:.5}
+  30%{transform:translate(6px,5px);opacity:1}
+  60%{transform:translate(-4px,-6px);opacity:.2}
+  80%{transform:translate(-2px,3px);opacity:.7}
+}
+@keyframes ghostDriftF{
+  0%,100%{transform:translate(0,0);opacity:.3}
+  25%{transform:translate(-8px,-3px);opacity:.7}
+  50%{transform:translate(5px,7px);opacity:.15}
+  75%{transform:translate(3px,-5px);opacity:.6}
+}
+
 /* --- Portal: scale in --- */
 .hero-vinyl.is-loaded .vinyl-portal{animation:enterPortal 1.2s cubic-bezier(.22,1,.36,1) .15s both}
 @keyframes enterPortal{

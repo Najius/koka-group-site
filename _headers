@@ -15,6 +15,11 @@
 /
   Cache-Control: public, max-age=0, must-revalidate
 
+# Catalogue — hidden from search engines
+/catalogue-2026.pdf
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=86400
+
 # Security headers
 /*
   X-Frame-Options: DENY

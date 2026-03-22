@@ -156,7 +156,7 @@ if (heroVinyl) {
         ct.call(function() {
           bgSlides.forEach(function(bg) { bg.classList.remove('active'); });
           if (bgSlides[current]) bgSlides[current].classList.add('active');
-        }, null, .2);
+        }, null, .35);
       }
     }
 

@@ -590,8 +590,12 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
   if (items.length < 2) return;
   var current = 0;
   setInterval(function() {
+    // Fade out current
     items[current].classList.remove('active');
-    current = (current + 1) % items.length;
-    items[current].classList.add('active');
-  }, 5000);
+    // Wait for exit transition, then fade in next
+    setTimeout(function() {
+      current = (current + 1) % items.length;
+      items[current].classList.add('active');
+    }, 500);
+  }, 6000);
 })();

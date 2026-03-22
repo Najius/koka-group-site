@@ -669,17 +669,18 @@ a.presta-card:hover h4{color:var(--blue)}
 .section-cta{text-align:center;padding:2rem clamp(1.5rem,5vw,5rem) 4rem}
 
 /* Testimonial slider */
-.testimonial-slider{position:relative;overflow:hidden}
-.testimonial{display:flex;flex-direction:column;align-items:center;justify-content:center;position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
-.testimonial:first-child{position:relative}
-.testimonial.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative}
+.testimonial-slider{position:relative;min-height:200px;display:flex;align-items:center;justify-content:center}
+.testimonial{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
+.testimonial.active{opacity:1;transform:translateY(0);pointer-events:auto}
 
-/* Mariages.net section */
-.mariages-net-section{display:flex;flex-direction:column;align-items:center;gap:2rem;padding:3rem clamp(1.5rem,5vw,5rem);text-align:center}
-.mariages-net-badge{display:flex;justify-content:center}
-.mariages-net-reviews{max-width:800px;width:100%}
-.reviews-link-text{font-size:13px;color:var(--blue);letter-spacing:1px;transition:opacity .3s}
-.reviews-link-text:hover{opacity:.7}
+/* Rating card */
+.rating-card{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:2rem 3rem;margin:2rem auto 3rem;max-width:400px;text-align:center;border:1px solid var(--border);border-radius:12px;transition:all .4s var(--ease);text-decoration:none;color:inherit}
+.rating-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 40px rgba(140,179,210,.1)}
+.rating-card-stars{font-size:1.8rem;color:#C8A96E;letter-spacing:4px}
+.rating-card-score{font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--white);line-height:1}
+.rating-card-score span{font-size:1.2rem;font-weight:400;color:var(--muted)}
+.rating-card-count{font-size:13px;color:var(--blue);letter-spacing:1px}
+.rating-card-source{font-size:11px;color:var(--muted);margin-top:.3rem}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){

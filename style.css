@@ -681,8 +681,8 @@ a.presta-card:hover h4{color:var(--blue)}
 .blog-article ul,.blog-article ol{padding-left:1.5rem;margin-bottom:1.2rem}
 .blog-article li{font-size:18px;color:var(--muted);line-height:1.8;margin-bottom:.5rem}
 .blog-article strong{color:var(--white);font-weight:600}
-.blog-article a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
-.blog-article a:hover{opacity:.8}
+.blog-article a:not(.btn){color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.blog-article a:not(.btn):hover{opacity:.8}
 .blog-article blockquote{border-left:3px solid var(--blue);padding:1rem 1.5rem;margin:2rem 0;font-style:italic;color:var(--dim)}
 .blog-figure{margin:2.5rem 0;border-radius:8px;overflow:hidden}
 .blog-figure img{width:100%;height:auto;display:block;filter:grayscale(.3)}

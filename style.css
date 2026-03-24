@@ -631,6 +631,9 @@ a.presta-card:hover h4{color:var(--blue)}
 .whatsapp-btn{display:inline-flex;align-items:center;gap:.7rem;padding:.8rem 1.4rem;background:#25D366;color:#fff!important;border-radius:100px;font-family:var(--ff);font-size:15px;font-weight:500;transition:all .3s var(--ease);text-decoration:none}
 .whatsapp-btn:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,211,102,.3)}
 .whatsapp-btn svg{flex-shrink:0}
+.cal-btn{display:inline-flex;align-items:center;gap:.7rem;padding:.8rem 1.4rem;background:transparent;color:var(--blue)!important;border:1px solid var(--blue);border-radius:100px;font-family:var(--ff);font-size:15px;font-weight:500;transition:all .3s var(--ease);text-decoration:none}
+.cal-btn:hover{background:var(--blue);color:var(--bg)!important;transform:translateY(-2px);box-shadow:0 8px 25px rgba(140,179,210,.2)}
+.cal-btn svg{flex-shrink:0}
 .contact-form{display:flex;flex-direction:column;gap:1.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .form-group{display:flex;flex-direction:column;gap:.5rem}

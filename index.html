@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=771">
+  <link rel="stylesheet" href="style.css?v=772">
   <link rel="preload" as="image" href="images/couple-dance-lights.jpg">
 <script type="application/ld+json">
 {
@@ -193,10 +193,11 @@
       <div class="vinyl-group-label" id="vinylGroupLabel">group</div>
     </div>
     <div class="hero-cta">
-      <p class="hero-tagline">DJ & Animation musicale sur-mesure pour vos événements</p>
+      <p class="hero-value-prop">Duo DJ & animation charismatique.<br>100+ événements. Son, lumière, émotion.</p>
+      <p class="hero-tagline">L'expérience musicale sur-mesure qui fait la différence pour votre événement.</p>
       <div class="hero-buttons">
-        <a href="contact.html" class="btn btn-cta">Demander un devis</a>
-        <a href="prestations.html" class="btn btn-light">Nos prestations</a>
+        <a href="contact.html" class="btn btn-cta">Demander un devis gratuit</a>
+        <a href="prestations.html" class="btn btn-light">Découvrir nos prestations</a>
       </div>
     </div>
   </section>
@@ -243,6 +244,50 @@
     </div>
   </section>
   <div class="section-cta"><a href="prestations.html" class="btn">Voir toutes nos prestations</a></div>
+
+  <!-- PRICING -->
+  <section class="pricing section-pad">
+    <div class="pricing-head">
+      <span class="label">Nos tarifs</span>
+      <h2>Des formules adaptées à <em>chaque événement</em></h2>
+      <p>Tarifs indicatifs. Chaque prestation est personnalisée selon vos besoins.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <span class="pricing-label">Soirées privées</span>
+        <div class="pricing-price">À partir de <strong>800 €</strong></div>
+        <ul class="pricing-features">
+          <li>DJ set soirée</li>
+          <li>Sonorisation adaptée</li>
+          <li>Éclairage d'ambiance</li>
+        </ul>
+        <a href="soirees.html" class="btn btn-light">En savoir plus</a>
+      </div>
+      <div class="pricing-card pricing-card--highlight">
+        <span class="pricing-badge">Populaire</span>
+        <span class="pricing-label">Mariages</span>
+        <div class="pricing-price">À partir de <strong>1 530 €</strong></div>
+        <ul class="pricing-features">
+          <li>Cocktail + soirée dansante</li>
+          <li>Playlist sur-mesure</li>
+          <li>Son et lumière pro</li>
+          <li>Coordination wedding planner</li>
+        </ul>
+        <a href="mariages.html" class="btn btn-cta">Demander un devis</a>
+      </div>
+      <div class="pricing-card">
+        <span class="pricing-label">Corporate</span>
+        <div class="pricing-price"><strong>Sur devis</strong></div>
+        <ul class="pricing-features">
+          <li>Séminaires & galas</li>
+          <li>Sonorisation discours</li>
+          <li>Éclairage scénique</li>
+          <li>Coordination équipe event</li>
+        </ul>
+        <a href="corporate.html" class="btn btn-light">En savoir plus</a>
+      </div>
+    </div>
+  </section>
 
   <!-- PROCESS -->
   <section class="process section-pad">
@@ -347,12 +392,41 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <span class="label">Prêt à commencer ?</span>
-    <h2>Un projet <em>en tête ?</em></h2>
-    <p>Chaque événement est unique. Discutons du vôtre.</p>
-    <a href="contact.html" class="btn btn-cta">Nous contacter</a>
+  <!-- CTA + MINI FORM -->
+  <section class="cta-form">
+    <div class="cta-form-inner">
+      <div class="cta-form-text">
+        <span class="label">Prêt à commencer ?</span>
+        <h2>Parlons de votre <em>projet</em></h2>
+        <p>Réponse garantie sous 24h. Devis gratuit et sans engagement.</p>
+        <div class="cta-form-contact">
+          <a href="https://wa.me/33768080080?text=Bonjour%20KOKA%20Group%20!%20Je%20souhaite%20discuter%20d'un%20événement." class="btn btn-light" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="tel:+33768080080" class="btn btn-light">07 68 08 00 80</a>
+        </div>
+      </div>
+      <form class="cta-mini-form" action="contact.html" method="GET">
+        <div class="cta-mini-field">
+          <label for="miniType">Type d'événement</label>
+          <select id="miniType" name="type">
+            <option value="">Choisir...</option>
+            <option value="mariage">Mariage</option>
+            <option value="corporate">Corporate / Séminaire</option>
+            <option value="soiree">Soirée privée</option>
+            <option value="artistique">Artistique</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="cta-mini-field">
+          <label for="miniDate">Date prévue</label>
+          <input type="date" id="miniDate" name="date">
+        </div>
+        <div class="cta-mini-field">
+          <label for="miniEmail">Votre email</label>
+          <input type="email" id="miniEmail" name="email" placeholder="email@exemple.com">
+        </div>
+        <button type="submit" class="btn btn-cta" style="width:100%;text-align:center">Demander un devis gratuit</button>
+      </form>
+    </div>
   </section>
 
   </main>

@@ -7,7 +7,7 @@
   --bg:#0A1628;--bg-dark:#0d1f3a;--card:#0e1a30;
   --black:#F4F1EC;--dark:#e0ddd7;--white:#F4F1EC;
   --muted:#8a95a8;--dim:#a0aabb;
-  --blue:#D4A843;--blue-dark:#c99b38;
+  --blue:#8CB3D2;--blue-dark:#8CB3D2;
   --mariage:#D4A843;--corporate:#5b8cc9;--artistique:#b97fbf;--soirees:#D4766A;
   --border:rgba(255,255,255,.08);
   --ff:'Jost',sans-serif;
@@ -25,7 +25,7 @@ body{font-family:var(--ff);font-weight:400;background:var(--bg);color:var(--blac
 .hero-bg-img.active{opacity:.18}
 
 /* === COLOR UNIVERSE SYSTEM — Section-based === */
-[data-universe]{--u-bg:var(--bg);--u-text:var(--black);--u-muted:#8a95a8;--u-accent:#D4A843;--u-border:rgba(255,255,255,.08);--u-card:#0e1a30;--u-img:grayscale(.5);
+[data-universe]{--u-bg:var(--bg);--u-text:var(--black);--u-muted:#8a95a8;--u-accent:#8CB3D2;--u-border:rgba(255,255,255,.08);--u-card:#0e1a30;--u-img:grayscale(.5);
   background-color:var(--u-bg);color:var(--u-text);position:relative}
 
 [data-universe="mariages"]{--u-bg:#FAF5EE;--u-text:#1a1714;--u-muted:#5a504a;--u-accent:#D4A843;--u-border:rgba(0,0,0,.08);--u-card:#F0EBE0;--u-img:none}

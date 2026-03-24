@@ -684,6 +684,8 @@ a.presta-card:hover h4{color:var(--blue)}
 .blog-article a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 .blog-article a:hover{opacity:.8}
 .blog-article blockquote{border-left:3px solid var(--blue);padding:1rem 1.5rem;margin:2rem 0;font-style:italic;color:var(--dim)}
+.blog-figure{margin:2.5rem 0;border-radius:8px;overflow:hidden}
+.blog-figure img{width:100%;height:auto;display:block;filter:grayscale(.3)}
 .blog-meta{font-size:14px;color:var(--muted);letter-spacing:1px;margin-top:.5rem}
 .blog-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;padding:0 clamp(1.5rem,5vw,5rem)}
 .blog-card{display:block;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:8px;transition:all .3s var(--ease);text-decoration:none;color:inherit}

@@ -90,6 +90,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://koka-group.com/blog/nos-collaborations.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- English pages -->
   <url>
     <loc>https://koka-group.com/en/index.html</loc>

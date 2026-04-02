@@ -576,6 +576,18 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     btn.addEventListener('click', function() { goTo(current - 1); });
   });
 
+  // Per-field validation on blur
+  ['wizName','wizEmail','wizPhone'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('blur', function() {
+      if (el.required && !el.value.trim()) { el.style.borderColor = '#D4766A'; }
+      else if (el.type === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) { el.style.borderColor = '#D4766A'; }
+      else { el.style.borderColor = ''; }
+    });
+    el.addEventListener('input', function() { if (el.value.trim()) el.style.borderColor = ''; });
+  });
+
   // Submit
   var form = document.getElementById('contactForm');
   if (form) {

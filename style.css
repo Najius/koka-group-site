@@ -112,6 +112,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .btn,.btn-cta,.btn-submit{transition:all .4s var(--ease);will-change:transform}
 .btn:hover,.btn-cta:hover,.btn-submit:hover{transform:scale(1.05)}
 .btn:active,.btn-cta:active,.btn-submit:active{transform:scale(0.97)}
+.btn:disabled,.btn-cta:disabled,.btn-submit:disabled,.wizard-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 /* Smooth image reveal on scroll */
 .img-reveal{overflow:hidden}

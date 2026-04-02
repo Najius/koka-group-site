@@ -20,6 +20,10 @@
 // Register GSAP plugins
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.globalTimeline.timeScale(0);
+    gsap.defaults({ duration: 0 });
+  }
 }
 
 /* --- Header Universe Adaptation --- */
@@ -579,8 +583,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
       var formData = new FormData(form);
       fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-        .then(function(res) { if (res.ok) { goTo(5); } else { alert('Erreur — veuillez réessayer.'); } })
-        .catch(function() { alert('Erreur réseau — veuillez réessayer.'); });
+        .then(function(res) { if (res.ok) { goTo(5); } else { var errEl = document.getElementById('formError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'formError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur — veuillez réessayer.'; } })
+        .catch(function() { var errEl = document.getElementById('formError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'formError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur réseau — veuillez réessayer.'; });
     });
   }
 })();
@@ -607,12 +611,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
           if (btn) btn.style.display = 'none';
           if (confirm) confirm.style.display = 'block';
         } else {
-          alert('Erreur — veuillez réessayer.');
+          var errEl = document.getElementById('prepFormError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'prepFormError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur — veuillez réessayer.';
           if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
         }
       })
       .catch(function() {
-        alert('Erreur réseau — veuillez réessayer.');
+        var errEl = document.getElementById('prepFormError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'prepFormError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur réseau — veuillez réessayer.';
         if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
       });
   });
@@ -703,7 +707,7 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
   var items = slider.querySelectorAll('.testimonial');
   if (items.length < 2) return;
   var current = 0;
-  setInterval(function() {
+  var slideTimer = setInterval(function() {
     // Fade out current
     items[current].classList.remove('active');
     // Wait for exit transition, then fade in next

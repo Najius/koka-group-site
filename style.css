@@ -69,7 +69,7 @@ body{font-family:var(--ff);font-weight:400;background:var(--bg);color:var(--blac
 [data-universe="mariages"] .site-footer-logo{filter:brightness(0) invert(1)}
 [data-universe] ::selection{background:var(--u-accent);color:var(--u-bg)}
 [data-universe] .form-group input,[data-universe] .form-group textarea{color:var(--u-text);border-bottom-color:var(--u-border)}
-[data-universe] .form-group input:focus,[data-universe] .form-group textarea:focus{border-bottom-color:var(--u-accent)}
+[data-universe] .form-group input:focus-visible,[data-universe] .form-group textarea:focus-visible{border-bottom-color:var(--u-accent)}
 [data-universe] .contact-info p{color:var(--u-muted)}
 [data-universe] .contact-info a{color:var(--u-accent)}
 [data-universe] .hero-scroll span{color:var(--u-muted)}
@@ -632,7 +632,7 @@ a.presta-card:hover h4{color:var(--blue)}
 .wizard-fields{display:flex;flex-direction:column;gap:1.8rem}
 .wizard-field label{display:block;font-size:18px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:.6rem}
 .wizard-field input,.wizard-field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--white);padding:.8rem 0;font-family:var(--ff);font-size:18px;font-weight:300;outline:none;transition:border-color .4s}
-.wizard-field input:focus,.wizard-field textarea:focus{border-color:var(--blue)}
+.wizard-field input:focus-visible,.wizard-field textarea:focus-visible{border-color:var(--blue)}
 .wizard-field textarea{min-height:100px;resize:vertical}
 .wizard-field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .wizard-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;gap:1rem}
@@ -665,7 +665,7 @@ a.presta-card:hover h4{color:var(--blue)}
 .form-group label{font-size:18px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
 .required{color:var(--blue)}
 .form-group input,.form-group textarea{background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--white);padding:1rem 0;font-family:var(--ff);font-size:18px;font-weight:300;outline:none;transition:border-color .4s}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--blue)}
+.form-group input:focus-visible,.form-group textarea:focus-visible{border-color:var(--blue)}
 .form-group textarea{min-height:120px;resize:vertical}
 .btn-submit{padding:14px 48px;background:transparent;color:var(--white);border:1px solid var(--white);font-family:var(--ff);font-size:18px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all .4s var(--ease);align-self:flex-start;position:relative;overflow:hidden;z-index:1}
 .btn-submit::before{content:'';position:absolute;inset:0;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease);z-index:-1}
@@ -765,7 +765,7 @@ a.presta-card:hover h4{color:var(--blue)}
 .cta-mini-field label{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .cta-mini-field input,.cta-mini-field select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--white);padding:.8rem 0;font-family:var(--ff);font-size:16px;outline:none;transition:border-color .3s}
 .cta-mini-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center}
-.cta-mini-field input:focus,.cta-mini-field select:focus{border-color:var(--blue)}
+.cta-mini-field input:focus-visible,.cta-mini-field select:focus-visible{border-color:var(--blue)}
 .cta-mini-field select option{background:var(--bg);color:var(--white)}
 
 /* Section intermediate CTA */

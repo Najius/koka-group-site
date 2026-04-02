@@ -718,6 +718,8 @@ a.presta-card:hover h4{color:var(--blue)}
 .blog-card h3{font-family:var(--fd);font-size:1.2rem;margin-bottom:.6rem;color:var(--white)}
 .blog-card p{font-size:15px;color:var(--muted);line-height:1.6}
 .blog-card .blog-meta{margin-top:.8rem}
+.blog-card-img{overflow:hidden;border-radius:8px;margin-bottom:1.2rem;aspect-ratio:16/9}
+.blog-card-img img{width:100%;height:100%;object-fit:cover}
 
 /* ===== CROSS-LINKS ===== */
 .cross-links{padding:4rem clamp(1.5rem,5vw,5rem);text-align:center}

@@ -70,9 +70,12 @@ if (header) {
   const heroSection = document.querySelector('.hero-vinyl');
   let lastY = 0;
   const updateHeader = () => {
-    header.classList.toggle('scrolled', scrollY > 80);
     if (heroSection) {
-      header.classList.toggle('hero-hidden', scrollY < heroSection.offsetHeight * 0.85);
+      var pastHero = scrollY >= heroSection.offsetHeight;
+      header.classList.toggle('hero-hidden', !pastHero);
+      header.classList.toggle('scrolled', pastHero);
+    } else {
+      header.classList.toggle('scrolled', scrollY > 80);
     }
     lastY = scrollY;
   };
@@ -353,6 +356,24 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       { trigger: grid, start: 'top 85%', once: true });
   });
 
+  // About split photo reveal
+  (function() {
+    var section = document.getElementById('aboutSplit');
+    if (!section) return;
+    var left = section.querySelector('.split-photo--left');
+    var right = section.querySelector('.split-photo--right');
+    var text = section.querySelector('.split-text');
+    if (!left || !right || !text) return;
+    // Skip on mobile (stacked layout)
+    if (window.innerWidth <= 1024) return;
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: section, start: 'top 70%', end: 'top 10%', scrub: 0.8 }
+    });
+    tl.to(left, { xPercent: -25, duration: 1 }, 0);
+    tl.to(right, { xPercent: 25, duration: 1 }, 0);
+    tl.fromTo(text.children, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .5, stagger: .06 }, 0.3);
+  })();
+
   // About body
   document.querySelectorAll('.about-body, .about-txt').forEach(el => {
     reveal(el.children, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .7, stagger: .08, ease: 'power3.out' },
@@ -436,6 +457,38 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   });
 }
 
+/* --- Showreel Video Play/Pause --- */
+(function() {
+  var wrap = document.getElementById('showreelWrap');
+  var video = document.getElementById('showreelVideo');
+  if (!wrap || !video) return;
+
+  wrap.addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+      video.muted = false;
+      wrap.classList.add('is-playing');
+    } else {
+      video.pause();
+      wrap.classList.remove('is-playing');
+    }
+  });
+
+  // Auto-play muted when scrolled into view
+  if (typeof IntersectionObserver !== 'undefined') {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && video.paused) {
+          video.muted = true;
+          video.play().catch(function() {});
+          // Don't add is-playing class here — keep overlay visible for muted autoplay
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(wrap);
+  }
+})();
+
 /* --- Smooth Anchors --- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e) {
@@ -504,9 +557,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 
   // Submit
-  var submitBtn = wizard.querySelector('.wizard-submit');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', function() {
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
       var name = document.getElementById('wizName');
       var email = document.getElementById('wizEmail');
       if (!name || !name.value.trim() || !email || !email.value.trim()) {
@@ -514,17 +568,54 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         if (email && !email.value.trim()) email.style.borderColor = '#D4766A';
         return;
       }
-      // Collect all data
-      data.name = name.value;
-      data.email = email.value;
-      data.phone = (document.getElementById('wizPhone') || {}).value || '';
-      data.date = (document.getElementById('wizDate') || {}).value || '';
-      data.lieu = (document.getElementById('wizLieu') || {}).value || '';
-      data.message = (document.getElementById('wizMessage') || {}).value || '';
-      console.log('KOKA Contact Form:', data);
-      goTo(5);
+      // Populate hidden fields with wizard data
+      var h = function(id, val) { var el = document.getElementById(id); if (el) el.value = val; };
+      h('hiddenEventType', data.eventType);
+      h('hiddenGuests', data.guests);
+      h('hiddenNeeds', data.needs.join(', '));
+      // Dynamic subject with event type and name
+      var subjectEl = form.querySelector('[name="_subject"]');
+      if (subjectEl) subjectEl.value = (data.eventType || 'Demande') + ' — ' + name.value;
+
+      var formData = new FormData(form);
+      fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+        .then(function(res) { if (res.ok) { goTo(5); } else { alert('Erreur — veuillez réessayer.'); } })
+        .catch(function() { alert('Erreur réseau — veuillez réessayer.'); });
     });
   }
+})();
+
+/* === PREPARATION MARIAGE FORM === */
+(function() {
+  var form = document.getElementById('prepForm');
+  if (!form) return;
+  var confirm = document.getElementById('prepConfirm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours...'; }
+    // Dynamic subject with couple names
+    var noms = (document.getElementById('prepNom') || {}).value || '';
+    var subjectEl = form.querySelector('[name="_subject"]');
+    if (subjectEl && noms) subjectEl.value = 'Préparation Mariage — ' + noms;
+    var formData = new FormData(form);
+    fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+      .then(function(res) {
+        if (res.ok) {
+          Array.from(form.elements).forEach(function(el) { if (el.tagName !== 'BUTTON') el.style.display = 'none'; });
+          form.querySelectorAll('h2, .form-row, .wizard-field').forEach(function(el) { el.style.display = 'none'; });
+          if (btn) btn.style.display = 'none';
+          if (confirm) confirm.style.display = 'block';
+        } else {
+          alert('Erreur — veuillez réessayer.');
+          if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
+        }
+      })
+      .catch(function() {
+        alert('Erreur réseau — veuillez réessayer.');
+        if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
+      });
+  });
 })();
 
 /* === DYNAMIC ENHANCEMENTS === */
@@ -621,4 +712,33 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
       items[current].classList.add('active');
     }, 500);
   }, 6000);
+})();
+
+/* === COOKIE CONSENT BANNER === */
+(function() {
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  if (getCookie('koka_consent')) return;
+
+  var isEN = window.location.pathname.indexOf('/en/') !== -1;
+  var isSubdir = isEN || window.location.pathname.indexOf('/blog/') !== -1;
+  var banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML = '<p>' + (isEN ? 'This site uses cookies to improve your experience.' : 'Ce site utilise des cookies pour améliorer votre expérience.') + '</p>' +
+    '<div class="cookie-banner-actions">' +
+    '<button class="cookie-accept">' + (isEN ? 'Accept' : 'Accepter') + '</button>' +
+    '<a href="' + (isSubdir ? '../' : '') + 'mentions-legales.html" class="cookie-link">' + (isEN ? 'Learn more' : 'En savoir plus') + '</a>' +
+    '</div>';
+
+  document.body.appendChild(banner);
+
+  banner.querySelector('.cookie-accept').addEventListener('click', function() {
+    var d = new Date();
+    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+    document.cookie = 'koka_consent=true;expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+    banner.style.display = 'none';
+  });
 })();

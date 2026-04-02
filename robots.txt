@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /catalogue-2026.pdf
+Disallow: /preparation-mariage.html
+Disallow: /presentation.html
 
 Sitemap: https://koka-group.com/sitemap.xml

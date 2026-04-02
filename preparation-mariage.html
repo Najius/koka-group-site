@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de préparation mariage — KOKA Group</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/webp" href="images/favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=781">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <header class="header header--filled" data-header-universe="mariages">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="KOKA Group" width="350" height="159"></a>
+    <nav class="header-nav">
+      <a href="prestations.html">Prestations</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://wa.me/33768080080?text=Bonjour%20KOKA%20Group%20!" class="header-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="nav-overlay">
+    <nav><ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="prestations.html">Prestations</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+
+  <main id="main-content">
+  <div data-universe="mariages">
+
+    <section class="page-hero-clean">
+      <span class="label">Préparation musicale</span>
+      <h1>Votre mariage, votre <em>musique</em></h1>
+      <p>Ce formulaire nous aide à comprendre vos goûts et vos envies pour créer la playlist parfaite.</p>
+    </section>
+
+    <section class="section-pad" style="max-width:800px;margin:0 auto">
+      <form name="preparation-mariage" method="POST" action="https://formsubmit.co/CONTACT@koka-group.com" class="contact-form" id="prepForm">
+        <input type="hidden" name="_subject" value="Préparation Mariage — Nouvelles préférences musicales">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://koka-group.com/preparation-mariage.html">
+
+        <h2 style="font-size:1.6rem;margin-bottom:2rem">Informations générales</h2>
+
+        <div class="form-row">
+          <div class="wizard-field">
+            <label for="prepNom">Vos noms *</label>
+            <input type="text" id="prepNom" name="noms" required placeholder="Marie & Pierre">
+          </div>
+          <div class="wizard-field">
+            <label for="prepDate">Date du mariage *</label>
+            <input type="date" id="prepDate" name="date-mariage" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="wizard-field">
+            <label for="prepLieu">Lieu de réception</label>
+            <input type="text" id="prepLieu" name="lieu" placeholder="Château de...">
+          </div>
+          <div class="wizard-field">
+            <label for="prepInvites">Nombre d'invités</label>
+            <input type="number" id="prepInvites" name="invites" placeholder="120">
+          </div>
+        </div>
+
+        <h2 style="font-size:1.6rem;margin-top:3rem;margin-bottom:2rem">Moments musicaux</h2>
+
+        <div class="wizard-field">
+          <label for="prepCeremonie">Cérémonie laïque — Ambiance souhaitée</label>
+          <textarea id="prepCeremonie" name="ceremonie" placeholder="Entrée de la mariée, échange des voeux, sortie... Quel style ? Classique, acoustique, moderne ?"></textarea>
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepCocktail">Cocktail / Vin d'honneur</label>
+          <textarea id="prepCocktail" name="cocktail" placeholder="Ambiance lounge, jazz, bossa nova ? Des titres en particulier ?"></textarea>
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepRepas">Repas</label>
+          <textarea id="prepRepas" name="repas" placeholder="Ambiance de fond ? Des interventions prévues (discours, jeux, surprises) ?"></textarea>
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepOuverture">Ouverture de bal — Chanson choisie</label>
+          <input type="text" id="prepOuverture" name="ouverture-bal" placeholder="Titre + Artiste (ex: Perfect — Ed Sheeran)">
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepSoiree">Soirée dansante — Styles souhaités</label>
+          <textarea id="prepSoiree" name="soiree-dansante" placeholder="Disco, funk, rock, hip-hop, électro, variété française, latino... Tout est possible !"></textarea>
+        </div>
+
+        <h2 style="font-size:1.6rem;margin-top:3rem;margin-bottom:2rem">Vos goûts</h2>
+
+        <div class="wizard-field">
+          <label for="prepFavoris">Vos titres / artistes incontournables</label>
+          <textarea id="prepFavoris" name="favoris" placeholder="Les morceaux que vous VOULEZ absolument entendre. 5-10 titres idéalement."></textarea>
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepBlacklist">Titres / artistes à éviter</label>
+          <textarea id="prepBlacklist" name="blacklist" placeholder="Les morceaux que vous ne voulez PAS entendre. C'est important aussi !"></textarea>
+        </div>
+
+        <div class="wizard-field">
+          <label for="prepNotes">Notes complémentaires</label>
+          <textarea id="prepNotes" name="notes" placeholder="Tout ce qui peut nous aider : surprises prévues, moments forts, anecdotes, ambiance rêvée..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-cta" style="width:100%;text-align:center;margin-top:2rem">Envoyer mes préférences</button>
+        <div id="prepConfirm" class="wizard-confirm" style="display:none;text-align:center;padding:3rem 0">
+          <span style="font-size:3rem">🎶</span>
+          <h2 style="margin-top:1rem">Merci !</h2>
+          <p style="color:var(--muted);margin-top:1rem">Vos préférences musicales ont bien été envoyées. Nous allons créer la playlist parfaite pour votre mariage.</p>
+          <a href="index.html" class="btn" style="margin-top:2rem">Retour à l'accueil</a>
+        </div>
+      </form>
+    </section>
+
+  </div>
+  </main>
+
+  <footer class="site-footer">      <div class="site-footer-inner">        <div class="site-footer-brand">          <img src="images/logo.png" alt="KOKA Group" width="350" height="159" class="site-footer-logo">          <p>Direction artistique son &amp; lumière pour vos événements.</p>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Navigation</span>          <a href="index.html">Accueil</a>          <a href="prestations.html">Prestations</a>          <a href="a-propos.html">À propos</a>          <a href="contact.html">Contact</a>          <a href="faq.html">FAQ</a>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Suivez-nous</span>          <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener">Instagram</a>          <a href="https://www.linkedin.com/company/kokagroup/" target="_blank" rel="noopener">LinkedIn</a>        </div>      </div>      <div class="site-footer-bottom">        <a href="mentions-legales.html">Mentions légales</a>        <a href="cgv.html">CGV</a>        <span>© 2026 KOKA Group</span>        <span class="made-by">Site par Mogi</span>      </div>    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js?v=765" defer></script>
+</body>
+</html>

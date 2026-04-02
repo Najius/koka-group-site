@@ -14,13 +14,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://koka-group.com/">
   <link rel="alternate" hreflang="fr" href="https://koka-group.com/">
-  <link rel="alternate" hreflang="en">
-  <link rel="alternate" hreflang="x-default" href="https://koka-group.com/" href="https://koka-group.com/en/index.html">
+  <link rel="alternate" hreflang="en" href="https://koka-group.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://koka-group.com/">
   <link rel="icon" type="image/webp" href="images/favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=779">
+  <link rel="stylesheet" href="style.css?v=781">
   <link rel="preload" as="image" href="images/couple-dance-lights.jpg">
 <script type="application/ld+json">
 {
@@ -88,6 +88,7 @@
     <nav class="header-nav">
       <a href="prestations.html">Prestations</a>
       <a href="a-propos.html">À propos</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
@@ -105,6 +106,7 @@
       <li><a href="index.html">Accueil</a></li>
       <li><a href="prestations.html">Prestations</a></li>
       <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul></nav>
   </div>
@@ -210,6 +212,25 @@
     </div>
   </div>
 
+  <!-- SHOWREEL VIDEO -->
+  <section class="showreel">
+    <div class="showreel-head">
+      <span class="label">Decouvrez-nous en action</span>
+      <h2>L'experience <em>KOKA</em></h2>
+    </div>
+    <div class="showreel-inner" id="showreelWrap">
+      <video class="showreel-video" id="showreelVideo" muted loop playsinline preload="metadata">
+        <source src="images/showreel.mp4" type="video/mp4">
+      </video>
+      <div class="showreel-overlay" id="showreelOverlay">
+        <button class="showreel-play" id="showreelPlay" aria-label="Lire la vidéo">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="29" stroke="white" stroke-width="2"/><polygon points="24,18 24,42 44,30" fill="white"/></svg>
+        </button>
+        <span class="showreel-play-label">Voir le showreel</span>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="services">
     <div class="services-head">
@@ -221,7 +242,7 @@
         <span class="svc-card-num">01</span>
         <div class="svc-card-img"><img src="images/event-dancefloor2.jpg" srcset="images/w400/event-dancefloor2.jpg 400w, images/w800/event-dancefloor2.jpg 800w, images/event-dancefloor2.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Animation DJ mariage dancefloor" width="3238" height="2160" loading="lazy"></div>
         <h3>Mariages</h3>
-        <p>Du vin d'honneur au dancefloor, une bande son pensée pour chaque moment.</p>
+        <p>De la cérémonie au dancefloor, une bande son pensée pour chaque moment.</p>
       </a>
       <a href="corporate.html" class="svc-card svc-card--corporate">
         <span class="svc-card-num">02</span>
@@ -255,7 +276,7 @@
     <div class="pricing-grid">
       <div class="pricing-card">
         <span class="pricing-label">Soirées privées</span>
-        <div class="pricing-price">À partir de <strong>800 €</strong></div>
+        <div class="pricing-price">À partir de <strong>200 €</strong></div>
         <ul class="pricing-features">
           <li>DJ set soirée</li>
           <li>Sonorisation adaptée</li>
@@ -321,15 +342,20 @@
   <div class="section-cta"><a href="contact.html" class="btn btn-cta">Discuter de votre projet</a></div>
 
   <!-- ABOUT -->
-  <section class="about-split">
-    <div class="about-img-wrap"><img src="images/duo-bw.jpg" srcset="images/w400/duo-bw.jpg 400w, images/w800/duo-bw.jpg 800w, images/duo-bw.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Camille & Colin — KOKA Group" width="1920" height="1280" loading="lazy"></div>
-    <div class="about-body">
+  <section class="about-split" id="aboutSplit">
+    <div class="split-photo split-photo--left">
+      <img src="images/duo-bw.jpg" srcset="images/w400/duo-bw.jpg 400w, images/w800/duo-bw.jpg 800w, images/duo-bw.jpg 1920w" sizes="100vw" alt="" width="1920" height="1280" loading="lazy">
+    </div>
+    <div class="split-photo split-photo--right">
+      <img src="images/duo-bw.jpg" srcset="images/w400/duo-bw.jpg 400w, images/w800/duo-bw.jpg 800w, images/duo-bw.jpg 1920w" sizes="100vw" alt="" width="1920" height="1280" loading="lazy">
+    </div>
+    <div class="split-text">
       <span class="label">Qui sommes-nous</span>
       <h2>Deux passionnés,<br>une <em>vision</em></h2>
       <p>KOKA Group est une agence de direction artistique sonore et lumière fondée en 2022 par Camille et Colin. Bien plus qu'un DJ : nous concevons des expériences immersives sur-mesure.</p>
       <p>Son, lumière, mise en scène, scénographie : chaque élément est pensé pour créer une émotion unique. De la première note au dernier rayon de lumière, nous orchestrons votre événement.</p>
       <p style="margin-top:1rem;font-size:14px;color:var(--blue);letter-spacing:1px">Nantes · Poitiers · France · International</p>
-      <p style="font-size:13px;color:var(--muted);letter-spacing:.5px">Nous parlons français, anglais, espagnol et italien</p>
+      <p style="margin-top:.8rem;font-size:14px;color:var(--blue);letter-spacing:2px;font-family:var(--ff)">FR · EN · ES · IT</p>
       <a href="a-propos.html" class="btn btn-light">Notre histoire</a>
     </div>
   </section>
@@ -371,22 +397,30 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- SOUNDCLOUD -->
+  <section class="section-pad" style="max-width:900px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="label">Ecoutez-nous</span>
+      <h2>Nos <em>mixes</em></h2>
+    </div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-994740461&color=%238CB3D2&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" loading="lazy" style="border-radius:8px"></iframe>
+    <div style="text-align:center;margin-top:1rem">
+      <a href="https://soundcloud.com/user-994740461" target="_blank" rel="noopener" class="btn btn-light" style="font-size:14px">Tous nos mixes sur SoundCloud</a>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
   <section class="gallery">
     <div class="gallery-head">
       <h2>Sur <em>Instagram</em></h2>
       <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" class="label">@koka.group</a>
     </div>
-    <div class="gallery-grid">
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/couple-dance-lights.jpg" srcset="images/w400/couple-dance-lights.jpg 400w, images/w800/couple-dance-lights.jpg 800w, images/couple-dance-lights.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Couple dansant sous les lumières" width="1067" height="1600" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/mariage-ouverture.jpg" srcset="images/w400/mariage-ouverture.jpg 400w, images/w800/mariage-ouverture.jpg 800w, images/mariage-ouverture.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Ouverture de bal mariage" width="1600" height="1200" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/setup-gala.jpg" srcset="images/w400/setup-gala.jpg 400w, images/w800/setup-gala.jpg 800w, images/setup-gala.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Installation sonore gala" width="1600" height="900" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/dj-vinyl-action.jpg" srcset="images/w400/dj-vinyl-action.jpg 400w, images/w800/dj-vinyl-action.jpg 800w, images/dj-vinyl-action.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="DJ en action aux platines" width="1200" height="1600" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/dj-dancefloor-view.jpg" srcset="images/w400/dj-dancefloor-view.jpg 400w, images/w800/dj-dancefloor-view.jpg 800w, images/dj-dancefloor-view.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Vue du dancefloor depuis le DJ" width="1200" height="1600" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/event-dancefloor2.jpg" srcset="images/w400/event-dancefloor2.jpg 400w, images/w800/event-dancefloor2.jpg 800w, images/event-dancefloor2.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Dancefloor animé en soirée" width="3238" height="2160" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/event-crowd.jpg" srcset="images/w400/event-crowd.jpg 400w, images/w800/event-crowd.jpg 800w, images/event-crowd.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Foule en soirée événementielle" width="3238" height="2160" loading="lazy"></a>
-      <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/event-ambiance.jpg" srcset="images/w400/event-ambiance.jpg 400w, images/w800/event-ambiance.jpg 800w, images/event-ambiance.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Ambiance lumineuse événement" width="1920" height="1280" loading="lazy"></a>
+    <div class="insta-embeds">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DT5CoL6DVDH/" data-instgrm-version="14" style="background:#0A1628;border:0;border-radius:8px;max-width:340px;min-width:280px;width:calc(33% - 1rem)"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQMeCAHjZjw/" data-instgrm-version="14" style="background:#0A1628;border:0;border-radius:8px;max-width:340px;min-width:280px;width:calc(33% - 1rem)"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKEfmK8hCtZ/" data-instgrm-version="14" style="background:#0A1628;border:0;border-radius:8px;max-width:340px;min-width:280px;width:calc(33% - 1rem)"></blockquote>
     </div>
+    <script async src="//www.instagram.com/embed.js"></script>
     <div class="gallery-cta">
       <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" class="btn btn-light">Suivez-nous sur Instagram</a>
     </div>
@@ -444,6 +478,7 @@
         <a href="prestations.html">Prestations</a>
         <a href="a-propos.html">À propos</a>
         <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
       </div>
       <div class="site-footer-nav">
         <span class="site-footer-heading">Suivez-nous</span>
@@ -453,6 +488,7 @@
     </div>
     <div class="site-footer-bottom">
       <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
       <span>© 2026 KOKA Group</span>
       <span class="made-by">Site par Mogi</span>
     </div>
@@ -460,6 +496,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="script.js?v=762" defer></script>
+  <script src="script.js?v=765" defer></script>
 </body>
 </html>

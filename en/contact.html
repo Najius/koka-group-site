@@ -7,8 +7,8 @@
   <meta name="description" content="Contact KOKA Group for your event in Nantes, Poitiers and across France. Free quote within 24 hours for weddings, corporate events and private parties. WhatsApp, email, phone.">
   <link rel="canonical" href="https://koka-group.com/en/contact.html">
   <link rel="alternate" hreflang="fr" href="https://koka-group.com/contact.html">
-  <link rel="alternate" hreflang="en">
-  <link rel="alternate" hreflang="x-default" href="https://koka-group.com/contact.html" href="https://koka-group.com/en/contact.html">
+  <link rel="alternate" hreflang="en" href="https://koka-group.com/en/contact.html">
+  <link rel="alternate" hreflang="x-default" href="https://koka-group.com/contact.html">
   <meta property="og:title" content="Contact — KOKA Group DJ & Entertainment Nantes">
   <meta property="og:description" content="Contact KOKA Group for your event in Nantes, Poitiers and across France. Free quote within 24 hours for weddings, corporate events and private parties. WhatsApp, email, phone.">
   <meta property="og:locale" content="en_GB">
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=779">
+  <link rel="stylesheet" href="../style.css?v=781">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://koka-group.com/en/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://koka-group.com/en/contact.html"}]}
@@ -52,16 +52,21 @@
       <li><a href="prestations.html">Services</a></li>
       <li><a href="a-propos.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-    <li><a href="../contact.html" class="lang-switch">FR</a></li></ul></nav>
+      <li><a href="../contact.html" class="lang-switch">FR</a></li></ul></nav>
   </div>
 
   <main id="main-content">
   <section class="contact-section" data-universe="soirees">
 
     <!-- WIZARD FORM -->
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <form name="contact" method="POST" action="https://formsubmit.co/CONTACT@koka-group.com" id="contactForm">
+      <input type="hidden" name="_subject" value="New enquiry — KOKA Group">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://koka-group.com/en/contact.html">
+      <input type="hidden" name="eventType" id="hiddenEventType">
+      <input type="hidden" name="guests" id="hiddenGuests">
+      <input type="hidden" name="needs" id="hiddenNeeds">
     <div class="wizard" id="wizard">
       <!-- Progress -->
       <div class="wizard-progress">
@@ -190,6 +195,14 @@
         <p><a href="tel:+33768080080">07 68 08 00 80</a></p>
       </div>
       <div class="contact-sidebar-block">
+        <span class="label">Book a call</span>
+        <a href="https://cal.com/enguerran-avril-y9ipie/30min" target="_blank" rel="noopener" class="cal-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Discovery call (30 min)
+        </a>
+        <p style="font-size:13px;color:var(--dim);margin-top:.5rem">Free, no commitment</p>
+      </div>
+      <div class="contact-sidebar-block">
         <span class="label">Follow us</span>
         <p><a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener" style="color:var(--blue)">@koka.group</a></p>
       </div>
@@ -201,10 +214,10 @@
   </section>
   </main>
 
-      <footer class="site-footer">      <div class="site-footer-inner">        <div class="site-footer-brand">          <img src="../images/logo.png" alt="KOKA Group" width="350" height="159" class="site-footer-logo">          <p>Sound &amp; Light Artistic Direction for Your Events.</p>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Navigation</span>          <a href="index.html">Home</a>          <a href="prestations.html">Services</a>          <a href="a-propos.html">About</a>          <a href="contact.html">Contact</a>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Follow us</span>          <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener">Instagram</a>          <a href="https://www.linkedin.com/company/kokagroup/" target="_blank" rel="noopener">LinkedIn</a>        </div>      </div>      <div class="site-footer-bottom">        <a href="../mentions-legales.html">Legal Notice</a>        <span>&copy; 2026 KOKA Group</span>      </div>    </footer>
+      <footer class="site-footer">      <div class="site-footer-inner">        <div class="site-footer-brand">          <img src="../images/logo.png" alt="KOKA Group" width="350" height="159" class="site-footer-logo">          <p>Sound &amp; Light Artistic Direction for Your Events.</p>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Navigation</span>          <a href="index.html">Home</a>          <a href="prestations.html">Services</a>          <a href="a-propos.html">About</a>          <a href="contact.html">Contact</a>          <a href="../faq.html">FAQ</a>        </div>        <div class="site-footer-nav">          <span class="site-footer-heading">Follow us</span>          <a href="https://www.instagram.com/koka.group/" target="_blank" rel="noopener">Instagram</a>          <a href="https://www.linkedin.com/company/kokagroup/" target="_blank" rel="noopener">LinkedIn</a>        </div>      </div>      <div class="site-footer-bottom">        <a href="../mentions-legales.html">Legal Notice</a>        <a href="../cgv.html">T&amp;Cs</a>        <span>&copy; 2026 KOKA Group</span>        <span class="made-by">Site par Mogi</span>      </div>    </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="../script.js?v=762" defer></script>
+  <script src="../script.js?v=765" defer></script>
 </body>
 </html>

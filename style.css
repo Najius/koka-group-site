@@ -730,7 +730,7 @@ a.presta-card:hover h4{color:var(--blue)}
 
 /* Skip link */
 .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--bg);padding:12px 24px;font-size:14px;z-index:9999;border-radius:0 0 8px 8px;transition:top .3s}
-.skip-link:focus{top:0}
+.skip-link:focus-visible{top:0}
 
 /* Hero CTA area */
 .hero-cta{text-align:center;margin-top:2rem;position:relative;z-index:2}

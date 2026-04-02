@@ -708,14 +708,19 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
   if (items.length < 2) return;
   var current = 0;
   var slideTimer = setInterval(function() {
-    // Fade out current
     items[current].classList.remove('active');
-    // Wait for exit transition, then fade in next
     setTimeout(function() {
       current = (current + 1) % items.length;
       items[current].classList.add('active');
     }, 500);
   }, 6000);
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) { clearInterval(slideTimer); }
+    else { slideTimer = setInterval(function() {
+      items[current].classList.remove('active');
+      setTimeout(function() { current = (current + 1) % items.length; items[current].classList.add('active'); }, 500);
+    }, 6000); }
+  });
 })();
 
 /* === COOKIE CONSENT BANNER === */

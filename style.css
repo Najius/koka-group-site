@@ -111,6 +111,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 /* Magnetic button effect */
 .btn,.btn-cta,.btn-submit{transition:all .4s var(--ease);will-change:transform}
 .btn:hover,.btn-cta:hover,.btn-submit:hover{transform:scale(1.05)}
+.btn:active,.btn-cta:active,.btn-submit:active{transform:scale(0.97)}
 
 /* Smooth image reveal on scroll */
 .img-reveal{overflow:hidden}
@@ -200,6 +201,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .header.hero-hidden{pointer-events:none}
 .header.hero-hidden .logo,.header.hero-hidden .header-nav{opacity:0;visibility:hidden}
 .header.hero-hidden .header-actions{pointer-events:auto}
+.nav-active{color:var(--blue)!important}
 .header-nav{display:flex;align-items:center;gap:2.5rem}
 .header-actions{display:flex;align-items:center;gap:1.2rem;z-index:1002}
 .lang-switch{font-family:var(--ff);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:6px 10px;border:1px solid var(--border);border-radius:4px;transition:all .3s var(--ease)}
@@ -207,11 +209,14 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .header-wa{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;transition:all .3s var(--ease);z-index:1001}
 .header-wa:hover{background:#1ebe5a;color:#fff;transform:scale(1.1)}
 .header-wa svg{display:block}
-.burger{background:none;border:none;cursor:pointer;display:none;flex-direction:column;gap:7px;padding:12px;z-index:1001}
+.burger{background:none;border:none;cursor:pointer;display:none;flex-direction:column;gap:7px;padding:14px;min-width:44px;min-height:44px;z-index:1001}
 .burger span{width:32px;height:2px;background:var(--white);transition:all .4s var(--ease);display:block}
 .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
 .burger.active span:nth-child(2){opacity:0}
 .burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
+
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* Nav Overlay (mobile) */
 .nav-overlay{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
@@ -640,6 +645,7 @@ a.presta-card:hover h4{color:var(--blue)}
 .wizard-back:hover{color:var(--white)}
 .wizard-next,.wizard-submit{background:transparent;border:1px solid var(--blue);color:var(--blue);font-family:var(--ff);font-size:18px;letter-spacing:2px;text-transform:uppercase;padding:.8rem 2rem;cursor:pointer;transition:all .3s var(--ease)}
 .wizard-next:hover,.wizard-submit:hover{background:var(--blue);color:var(--bg)}
+.wizard-next:active,.wizard-submit:active{transform:scale(0.97)}
 .wizard-confirm{text-align:center;padding:4rem 0}
 .wizard-confirm h2{margin:.5rem 0 1rem}
 .wizard-confirm p{color:var(--muted);font-size:18px}

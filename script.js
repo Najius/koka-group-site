@@ -53,17 +53,20 @@ const burger = document.querySelector('.burger');
 const navOverlay = document.querySelector('.nav-overlay');
 if (burger && navOverlay) {
   burger.setAttribute('aria-expanded', 'false');
+  navOverlay.setAttribute('aria-hidden', 'true');
   burger.addEventListener('click', () => {
     burger.classList.toggle('active');
     navOverlay.classList.toggle('active');
     var isOpen = navOverlay.classList.contains('active');
     burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    navOverlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   navOverlay.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
     burger.classList.remove('active');
     navOverlay.classList.remove('active');
     burger.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }));
 }
@@ -659,6 +662,7 @@ if (typeof IntersectionObserver !== 'undefined') {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('is-visible');
+        revealObserver.unobserve(e.target);
       }
     });
   }, { threshold: 0.15 });

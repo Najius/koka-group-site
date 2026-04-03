@@ -54,6 +54,21 @@ const navOverlay = document.querySelector('.nav-overlay');
 if (burger && navOverlay) {
   burger.setAttribute('aria-expanded', 'false');
   navOverlay.setAttribute('aria-hidden', 'true');
+  var navFocusable = navOverlay.querySelectorAll('a, button');
+  function trapFocus(e) {
+    if (e.key !== 'Tab' || !navFocusable.length) return;
+    var first = navFocusable[0], last = navFocusable[navFocusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  function closeNav() {
+    burger.classList.remove('active');
+    navOverlay.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    navOverlay.removeEventListener('keydown', trapFocus);
+  }
   burger.addEventListener('click', () => {
     burger.classList.toggle('active');
     navOverlay.classList.toggle('active');
@@ -62,40 +77,31 @@ if (burger && navOverlay) {
     navOverlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     document.body.style.overflow = isOpen ? 'hidden' : '';
     if (isOpen) {
-      // Focus trap
-      var focusable = navOverlay.querySelectorAll('a, button');
-      if (focusable.length) focusable[0].focus();
-      navOverlay.addEventListener('keydown', function trapFocus(e) {
-        if (e.key !== 'Tab') return;
-        var first = focusable[0], last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      });
+      if (navFocusable.length) navFocusable[0].focus();
+      navOverlay.addEventListener('keydown', trapFocus);
+    } else {
+      navOverlay.removeEventListener('keydown', trapFocus);
     }
   });
-  navOverlay.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    burger.classList.remove('active');
-    navOverlay.classList.remove('active');
-    burger.setAttribute('aria-expanded', 'false');
-    navOverlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }));
+  navOverlay.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
 }
 
 /* --- Header scroll state --- */
 const header = document.querySelector('.header');
 if (header) {
   const heroSection = document.querySelector('.hero-vinyl');
-  let lastY = 0;
+  var heroHeight = heroSection ? heroSection.offsetHeight : 0;
+  if (heroSection) {
+    window.addEventListener('resize', function() { heroHeight = heroSection.offsetHeight; });
+  }
   const updateHeader = () => {
     if (heroSection) {
-      var pastHero = scrollY >= heroSection.offsetHeight;
+      var pastHero = scrollY >= heroHeight;
       header.classList.toggle('hero-hidden', !pastHero);
       header.classList.toggle('scrolled', pastHero);
     } else {
       header.classList.toggle('scrolled', scrollY > 80);
     }
-    lastY = scrollY;
   };
   // Start hidden, reveal after hero scroll
   if (heroSection) header.classList.add('hero-hidden');
@@ -384,14 +390,16 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     var right = section.querySelector('.split-photo--right');
     var text = section.querySelector('.split-text');
     if (!left || !right || !text) return;
-    // Skip on mobile (stacked layout)
-    if (window.innerWidth <= 1024) return;
-    var tl = gsap.timeline({
-      scrollTrigger: { trigger: section, start: 'top 70%', end: 'top 10%', scrub: 0.8 }
+    ScrollTrigger.matchMedia({
+      "(min-width: 1025px)": function() {
+        var tl = gsap.timeline({
+          scrollTrigger: { trigger: section, start: 'top 70%', end: 'top 10%', scrub: 0.8 }
+        });
+        tl.to(left, { xPercent: -25, duration: 1 }, 0);
+        tl.to(right, { xPercent: 25, duration: 1 }, 0);
+        tl.fromTo(text.children, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .5, stagger: .06 }, 0.3);
+      }
     });
-    tl.to(left, { xPercent: -25, duration: 1 }, 0);
-    tl.to(right, { xPercent: 25, duration: 1 }, 0);
-    tl.fromTo(text.children, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .5, stagger: .06 }, 0.3);
   })();
 
   // About body
@@ -517,6 +525,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+/* --- Form error helper --- */
+function showFormError(form, id, msg) {
+  var el = document.getElementById(id);
+  if (!el) { el = document.createElement('p'); el.id = id; el.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(el); }
+  el.textContent = msg;
+}
+
 /* === CONTACT WIZARD === */
 (function initWizard() {
   var wizard = document.getElementById('wizard');
@@ -611,8 +626,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
       var formData = new FormData(form);
       fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-        .then(function(res) { if (res.ok) { goTo(5); } else { var errEl = document.getElementById('formError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'formError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur — veuillez réessayer.'; } })
-        .catch(function() { var errEl = document.getElementById('formError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'formError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur réseau — veuillez réessayer.'; });
+        .then(function(res) { if (res.ok) { goTo(5); } else { showFormError(form, 'formError', 'Erreur — veuillez réessayer.'); } })
+        .catch(function() { showFormError(form, 'formError', 'Erreur réseau — veuillez réessayer.'); });
     });
   }
 })();
@@ -639,12 +654,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
           if (btn) btn.style.display = 'none';
           if (confirm) confirm.style.display = 'block';
         } else {
-          var errEl = document.getElementById('prepFormError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'prepFormError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur — veuillez réessayer.';
+          showFormError(form, 'prepFormError', 'Erreur — veuillez réessayer.');
           if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
         }
       })
       .catch(function() {
-        var errEl = document.getElementById('prepFormError'); if (!errEl) { errEl = document.createElement('p'); errEl.id = 'prepFormError'; errEl.style.cssText = 'color:#D4766A;text-align:center;margin-top:1rem'; form.appendChild(errEl); } errEl.textContent = 'Erreur réseau — veuillez réessayer.';
+        showFormError(form, 'prepFormError', 'Erreur réseau — veuillez réessayer.');
         if (btn) { btn.disabled = false; btn.textContent = 'Envoyer mes préférences'; }
       });
   });
@@ -736,19 +751,17 @@ document.querySelectorAll('.btn, .btn-cta, .btn-submit').forEach(btn => {
   var items = slider.querySelectorAll('.testimonial');
   if (items.length < 2) return;
   var current = 0;
-  var slideTimer = setInterval(function() {
+  function advanceSlide() {
     items[current].classList.remove('active');
     setTimeout(function() {
       current = (current + 1) % items.length;
       items[current].classList.add('active');
     }, 500);
-  }, 6000);
+  }
+  var slideTimer = setInterval(advanceSlide, 6000);
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) { clearInterval(slideTimer); }
-    else { slideTimer = setInterval(function() {
-      items[current].classList.remove('active');
-      setTimeout(function() { current = (current + 1) % items.length; items[current].classList.add('active'); }, 500);
-    }, 6000); }
+    else { slideTimer = setInterval(advanceSlide, 6000); }
   });
 })();
 

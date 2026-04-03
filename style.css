@@ -66,7 +66,6 @@ body{font-family:var(--ff);font-weight:400;background:var(--bg);color:var(--blac
 [data-universe] .site-footer-brand p{color:var(--u-muted)}
 [data-universe] .site-footer-bottom a,[data-universe] .site-footer-bottom span{color:var(--u-muted);opacity:.5}
 [data-universe] .site-footer-logo{filter:brightness(0) invert(1)}
-[data-universe="mariages"] .site-footer-logo{filter:brightness(0) invert(1)}
 [data-universe] ::selection{background:var(--u-accent);color:var(--u-bg)}
 [data-universe] .form-group input,[data-universe] .form-group textarea{color:var(--u-text);border-bottom-color:var(--u-border)}
 [data-universe] .form-group input:focus-visible,[data-universe] .form-group textarea:focus-visible{border-bottom-color:var(--u-accent)}
@@ -109,7 +108,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
 /* Magnetic button effect */
-.btn,.btn-cta,.btn-submit{transition:all .4s var(--ease);will-change:transform}
+.btn,.btn-cta,.btn-submit{transition:transform .4s var(--ease),background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+.btn:hover,.btn-cta:hover,.btn-submit:hover{will-change:transform}
 .btn:hover,.btn-cta:hover,.btn-submit:hover{transform:scale(1.05)}
 .btn:active,.btn-cta:active,.btn-submit:active{transform:scale(0.97)}
 .btn:disabled,.btn-cta:disabled,.btn-submit:disabled,.wizard-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
@@ -154,8 +154,8 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .section-pad{position:relative}
 
 /* About image — remove grayscale on scroll */
-.about-img-wrap img,.about-img img{transition:filter 1.2s var(--ease) .3s,transform 1.5s var(--ease)}
-.about-img-wrap:hover img,.about-img:hover img{filter:grayscale(0)!important;transform:scale(1.02)}
+.about-img img{transition:filter 1.2s var(--ease) .3s,transform 1.5s var(--ease)}
+.about-img:hover img{filter:grayscale(0)!important;transform:scale(1.02)}
 
 /* Quote section — accent bar */
 .presta-sep blockquote,.quote-section blockquote{position:relative;padding-left:2rem}
@@ -164,38 +164,23 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 /* --- Label --- */
 .label{display:inline-block;font-family:var(--ff);font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--blue)}
 
-/* --- Hero Logo Deco --- */
-.hero-logo-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;opacity:.03;animation:logoPulse 8s ease-in-out infinite}
-.hero-logo-deco img{height:55vh;width:auto;filter:brightness(0) invert(1)}
-@keyframes logoPulse{0%,100%{transform:translate(-50%,-50%) scale(.97);opacity:.02}50%{transform:translate(-50%,-50%) scale(1.03);opacity:.05}}
 
 /* --- Header universe adaptation --- */
 .header .logo img,.header .burger span,.header-nav a{transition:filter .5s var(--ease),color .5s var(--ease),background .5s var(--ease),height .4s var(--ease)}
-[data-header-universe="mariages"] .logo img{filter:none}
+[data-header-universe] .logo img{filter:none}
 [data-header-universe="mariages"] .burger span{background:#F4F1EC}
 [data-header-universe="mariages"] .header-nav a{color:#b0aaa4}
-[data-header-universe="mariages"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-[data-header-universe="corporate"] .logo img{filter:none}
 [data-header-universe="corporate"] .burger span{background:#dce4ee}
 [data-header-universe="corporate"] .header-nav a{color:#9ab0cc}
-[data-header-universe="corporate"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-[data-header-universe="soirees"] .logo img{filter:none}
 [data-header-universe="soirees"] .burger span{background:#F4F1EC}
 [data-header-universe="soirees"] .header-nav a{color:#999}
-[data-header-universe="soirees"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-[data-header-universe="artistique"] .logo img{filter:none}
 [data-header-universe="artistique"] .burger span{background:#e8dce8}
 [data-header-universe="artistique"] .header-nav a{color:#b89ebe}
-[data-header-universe="artistique"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 
 .header--filled{background:rgba(10,22,40,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-.header--filled[data-header-universe="mariages"]{background:rgba(10,22,40,.88)}
-.header--filled[data-header-universe="corporate"]{background:rgba(10,22,40,.88)}
-.header--filled[data-header-universe="soirees"]{background:rgba(10,22,40,.88)}
-.header--filled[data-header-universe="artistique"]{background:rgba(10,22,40,.88)}
 
 /* --- Header --- */
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:1.6rem clamp(1.5rem,4vw,3.5rem);transition:all .6s var(--ease)}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:1.6rem clamp(1.5rem,4vw,3.5rem);transition:background .6s var(--ease),padding .6s var(--ease),backdrop-filter .6s var(--ease),border-color .6s var(--ease)}
 .header.scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);padding:1rem clamp(1.5rem,4vw,3.5rem)}
 .logo img{height:42px;width:auto;filter:brightness(0) invert(1);transition:height .4s var(--ease),opacity .5s var(--ease),transform .5s var(--ease)}
 .header.scrolled .logo img{height:34px}
@@ -243,6 +228,8 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .btn-cta{background:var(--blue);border-color:var(--blue);color:var(--bg);font-size:11px;padding:14px 42px}
 .btn-cta::before{background:var(--white)}
 .btn-cta:hover{border-color:var(--white);color:var(--bg)}
+.btn-sm{font-size:14px}
+.btn-full{width:100%;text-align:center;margin-top:2rem}
 
 
 /* ===== HERO VINYL ===== */
@@ -487,7 +474,6 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 
 /* ===== QUOTE ===== */
 .quote-section{padding:4rem clamp(1.5rem,5vw,5rem);text-align:center;position:relative;background:#0d1f3a;display:flex;flex-direction:column;align-items:center}
-.quote-deco{display:none}
 blockquote{font-family:var(--fd);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:400;font-style:italic;line-height:1.55;max-width:600px;margin:0 auto;position:relative;z-index:1}
 cite{display:block;margin-top:1.5rem;font-family:var(--ff);font-size:12px;color:var(--muted);font-style:normal;letter-spacing:2px;text-transform:uppercase}
 
@@ -500,7 +486,6 @@ cite{display:block;margin-top:1.5rem;font-family:var(--ff);font-size:12px;color:
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
 .gallery-grid a{display:block;aspect-ratio:1;overflow:hidden}
 .gallery-grid img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.9);transition:all .5s var(--ease)}
-.gallery-grid a:hover img{filter:grayscale(0);transform:scale(1.05)}
 
 /* ===== CTA ===== */
 .cta{padding:6rem clamp(1.5rem,5vw,5rem);text-align:center}
@@ -790,6 +775,38 @@ a.presta-card:hover h4{color:var(--blue)}
 .rating-badge-text{font-size:12px;color:var(--muted);letter-spacing:.5px}
 .rating-badge-logo{height:18px;width:auto;opacity:.7}
 
+/* Blog links on service pages */
+.blog-links{text-align:center;padding:2rem clamp(1.5rem,5vw,5rem) 0}
+.blog-links-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1rem}
+
+/* Nos valeurs section (a-propos) */
+.nos-valeurs{padding:5rem clamp(1.5rem,5vw,5rem);max-width:1300px;margin:0 auto}
+.nos-valeurs .label{text-align:center;display:block}
+.nos-valeurs h2{font-size:clamp(2rem,3.5vw,2.8rem);text-align:center;margin-bottom:3rem}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+
+/* 404 page */
+.error-page{text-align:center;padding:12rem 2rem 6rem}
+.error-page h1{font-size:clamp(3rem,8vw,6rem);color:var(--white);margin-bottom:1rem}
+.error-page p{color:var(--muted);font-size:20px;margin-bottom:2rem}
+
+/* SoundCloud section */
+.soundcloud-section{max-width:900px;margin:0 auto}
+.soundcloud-head{text-align:center;margin-bottom:2rem}
+.soundcloud-cta{text-align:center;margin-top:1rem}
+.soundcloud-section iframe{border-radius:8px}
+
+/* Noscript banner */
+.noscript-banner{background:#D4766A;color:#fff;text-align:center;padding:12px;font-family:sans-serif}
+
+/* About meta (locations + languages) */
+.about-meta{margin-top:1rem;font-size:14px;color:var(--blue);letter-spacing:1px}
+.about-langs{margin-top:.8rem;font-size:14px;color:var(--blue);letter-spacing:2px;font-family:var(--ff)}
+
+/* Prep form headings */
+.prep-heading{font-size:1.6rem;margin-top:3rem;margin-bottom:2rem}
+.prep-heading:first-of-type{margin-top:0}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .hero-vinyl{min-height:auto;padding:6rem 1.5rem 3rem}
@@ -810,6 +827,7 @@ a.presta-card:hover h4{color:var(--blue)}
   .contact-sidebar{flex:auto;flex-direction:row;flex-wrap:wrap;gap:2rem}
   .wizard-field-row{grid-template-columns:1fr}
   .values-ed{grid-template-columns:1fr;gap:2rem}
+  .values-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .stats-bar{flex-wrap:wrap;gap:2rem 3rem}
@@ -834,7 +852,7 @@ a.presta-card:hover h4{color:var(--blue)}
   .hero-text h1{font-size:clamp(2.5rem,12vw,4rem)}
   .vinyl-presta{flex-direction:column;gap:.3rem}
   /* Presta nav: scroll horizontal */
-  .presta-nav{gap:0;padding:.8rem 1rem;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .presta-nav{gap:0;padding:.8rem 1rem;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
   .presta-nav::-webkit-scrollbar{display:none}
   .presta-nav-link{flex-shrink:0;font-size:10px;padding:.4rem .8rem}
   /* Grids */
@@ -851,7 +869,7 @@ a.presta-card:hover h4{color:var(--blue)}
   .cat-head h2{font-size:clamp(1.6rem,6vw,2.5rem)}
   .process-steps{flex-direction:column;gap:0}
   .process-steps::before{top:0;bottom:0;left:5px;right:auto;width:1px;height:auto}
-  .process-step{padding-top:0;padding-left:2.5rem;padding-right:0;padding-bottom:2rem}
+  .process-step{padding:0 0 2rem 2.5rem}
   .process-step::before{top:2px;left:0}
   .process-step:last-child{padding-bottom:0}
   /* About */

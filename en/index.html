@@ -21,9 +21,10 @@
   <link rel="icon" type="image/webp" href="../images/favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Jost:wght@300;400&display=swap"></noscript>
   <link rel="stylesheet" href="../style.css?v=784">
-  <link rel="preload" as="image" href="../images/couple-dance-lights.jpg">
+  <link rel="preload" as="image" type="image/webp" href="../images/w800/couple-dance-lights.webp" imagesrcset="../images/w400/couple-dance-lights.webp 400w, ../images/w800/couple-dance-lights.webp 800w, ../images/couple-dance-lights.webp 1920w" imagesizes="100vw">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -118,10 +119,22 @@
     <h1 class="sr-only">KOKA Group — DJ & Bespoke Music Entertainment in Nantes and Poitiers</h1>
     <!-- Background images — all 4 preloaded, crossfade via opacity -->
     <div class="hero-bg-photo" id="heroBgPhoto">
-      <img class="hero-bg-img active" src="../images/couple-dance-lights.jpg" srcset="../images/w400/couple-dance-lights.jpg 400w, ../images/w800/couple-dance-lights.jpg 800w, ../images/couple-dance-lights.jpg 1920w" sizes="100vw" alt="" width="1067" height="1600" fetchpriority="high">
-      <img class="hero-bg-img" src="../images/mariage-ouverture.jpg" srcset="../images/w400/mariage-ouverture.jpg 400w, ../images/w800/mariage-ouverture.jpg 800w, ../images/mariage-ouverture.jpg 1920w" sizes="100vw" alt="" width="1600" height="1200" loading="lazy">
-      <img class="hero-bg-img" src="../images/dj-dancefloor-view.jpg" srcset="../images/w400/dj-dancefloor-view.jpg 400w, ../images/w800/dj-dancefloor-view.jpg 800w, ../images/dj-dancefloor-view.jpg 1920w" sizes="100vw" alt="" width="1200" height="1600" loading="lazy">
-      <img class="hero-bg-img" src="../images/setup-gala.jpg" srcset="../images/w400/setup-gala.jpg 400w, ../images/w800/setup-gala.jpg 800w, ../images/setup-gala.jpg 1920w" sizes="100vw" alt="" width="1600" height="900" loading="lazy">
+      <picture>
+        <source type="image/webp" srcset="../images/w400/couple-dance-lights.webp 400w, ../images/w800/couple-dance-lights.webp 800w, ../images/couple-dance-lights.webp 1920w" sizes="100vw">
+        <img class="hero-bg-img active" src="../images/couple-dance-lights.jpg" srcset="../images/w400/couple-dance-lights.jpg 400w, ../images/w800/couple-dance-lights.jpg 800w, ../images/couple-dance-lights.jpg 1920w" sizes="100vw" alt="" width="1067" height="1600" fetchpriority="high">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="../images/w400/mariage-ouverture.webp 400w, ../images/w800/mariage-ouverture.webp 800w, ../images/mariage-ouverture.webp 1920w" sizes="100vw">
+        <img class="hero-bg-img" src="../images/mariage-ouverture.jpg" srcset="../images/w400/mariage-ouverture.jpg 400w, ../images/w800/mariage-ouverture.jpg 800w, ../images/mariage-ouverture.jpg 1920w" sizes="100vw" alt="" width="1600" height="1200" loading="lazy">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="../images/w400/dj-dancefloor-view.webp 400w, ../images/w800/dj-dancefloor-view.webp 800w, ../images/dj-dancefloor-view.webp 1920w" sizes="100vw">
+        <img class="hero-bg-img" src="../images/dj-dancefloor-view.jpg" srcset="../images/w400/dj-dancefloor-view.jpg 400w, ../images/w800/dj-dancefloor-view.jpg 800w, ../images/dj-dancefloor-view.jpg 1920w" sizes="100vw" alt="" width="1200" height="1600" loading="lazy">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="../images/w400/setup-gala.webp 400w, ../images/w800/setup-gala.webp 800w, ../images/setup-gala.webp 1920w" sizes="100vw">
+        <img class="hero-bg-img" src="../images/setup-gala.jpg" srcset="../images/w400/setup-gala.jpg 400w, ../images/w800/setup-gala.jpg 800w, ../images/setup-gala.jpg 1920w" sizes="100vw" alt="" width="1600" height="900" loading="lazy">
+      </picture>
     </div>
     <!-- KOKA logo SVG with O as image viewport -->
     <div class="vinyl-logo">
@@ -184,10 +197,10 @@
       <!-- Image portal inside the O -->
       <div class="vinyl-portal" id="vinylO">
         <div class="vinyl-o-imgs">
-          <div class="vinyl-o-img active"><img src="../images/couple-dance-lights.jpg" srcset="../images/w400/couple-dance-lights.jpg 400w, ../images/w800/couple-dance-lights.jpg 800w, ../images/couple-dance-lights.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Couple dancing" width="1067" height="1600"></div>
-          <div class="vinyl-o-img"><img src="../images/mariage-ouverture.jpg" srcset="../images/w400/mariage-ouverture.jpg 400w, ../images/w800/mariage-ouverture.jpg 800w, ../images/mariage-ouverture.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Wedding first dance" width="1600" height="1200"></div>
-          <div class="vinyl-o-img"><img src="../images/dj-dancefloor-view.jpg" srcset="../images/w400/dj-dancefloor-view.jpg 400w, ../images/w800/dj-dancefloor-view.jpg 800w, ../images/dj-dancefloor-view.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="DJ dancefloor view" width="1200" height="1600"></div>
-          <div class="vinyl-o-img"><img src="../images/setup-gala.jpg" srcset="../images/w400/setup-gala.jpg 400w, ../images/w800/setup-gala.jpg 800w, ../images/setup-gala.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Gala setup" width="1600" height="900"></div>
+          <div class="vinyl-o-img active"><picture><source type="image/webp" srcset="../images/w400/couple-dance-lights.webp 400w, ../images/w800/couple-dance-lights.webp 800w, ../images/couple-dance-lights.webp 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px"><img src="../images/couple-dance-lights.jpg" srcset="../images/w400/couple-dance-lights.jpg 400w, ../images/w800/couple-dance-lights.jpg 800w, ../images/couple-dance-lights.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Couple dancing" width="1067" height="1600"></picture></div>
+          <div class="vinyl-o-img"><picture><source type="image/webp" srcset="../images/w400/mariage-ouverture.webp 400w, ../images/w800/mariage-ouverture.webp 800w, ../images/mariage-ouverture.webp 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px"><img src="../images/mariage-ouverture.jpg" srcset="../images/w400/mariage-ouverture.jpg 400w, ../images/w800/mariage-ouverture.jpg 800w, ../images/mariage-ouverture.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Wedding first dance" width="1600" height="1200"></picture></div>
+          <div class="vinyl-o-img"><picture><source type="image/webp" srcset="../images/w400/dj-dancefloor-view.webp 400w, ../images/w800/dj-dancefloor-view.webp 800w, ../images/dj-dancefloor-view.webp 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px"><img src="../images/dj-dancefloor-view.jpg" srcset="../images/w400/dj-dancefloor-view.jpg 400w, ../images/w800/dj-dancefloor-view.jpg 800w, ../images/dj-dancefloor-view.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="DJ dancefloor view" width="1200" height="1600"></picture></div>
+          <div class="vinyl-o-img"><picture><source type="image/webp" srcset="../images/w400/setup-gala.webp 400w, ../images/w800/setup-gala.webp 800w, ../images/setup-gala.webp 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px"><img src="../images/setup-gala.jpg" srcset="../images/w400/setup-gala.jpg 400w, ../images/w800/setup-gala.jpg 800w, ../images/setup-gala.jpg 1920w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1920px" alt="Gala setup" width="1600" height="900"></picture></div>
         </div>
         <div class="vinyl-dot" id="vinylDot"></div>
       </div>

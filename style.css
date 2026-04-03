@@ -109,14 +109,10 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 
 /* Magnetic button effect */
 .btn,.btn-cta,.btn-submit{transition:transform .4s var(--ease),background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
-.btn:hover,.btn-cta:hover,.btn-submit:hover{will-change:transform}
-.btn:hover,.btn-cta:hover,.btn-submit:hover{transform:scale(1.05)}
+.btn:hover,.btn-cta:hover,.btn-submit:hover{will-change:transform;transform:scale(1.05)}
 .btn:active,.btn-cta:active,.btn-submit:active{transform:scale(0.97)}
 .btn:disabled,.btn-cta:disabled,.btn-submit:disabled,.wizard-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
-/* Smooth image reveal on scroll */
-.img-reveal{overflow:hidden}
-.img-reveal img{transition:transform 1.2s var(--ease),filter 1.2s var(--ease)}
 
 /* Text split reveal */
 .line-reveal{overflow:hidden;display:block}
@@ -134,24 +130,14 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .marquee:hover .marquee-track{animation-play-state:paused}
 
 /* Gallery images — more dramatic hover */
-.gallery-grid a{transition:transform .5s var(--ease)}
 .gallery-grid a:hover{transform:scale(1.08);z-index:2}
 .gallery-grid a:hover img{filter:grayscale(0) brightness(1.05)!important;transform:scale(1.1)}
 
 /* Presta cards — lift + glow on hover */
-.presta-card{transition:all .4s var(--ease)}
 .presta-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
 
-/* Partner cards — subtle float */
-.partner-card{transition:transform .5s var(--ease)}
-.partner-card:hover{transform:translateY(-4px)}
-
 /* Values — accent line grows on hover */
-.value-item{transition:all .4s var(--ease);position:relative}
 .value-item:hover{transform:translateX(8px)}
-
-/* Section transitions */
-.section-pad{position:relative}
 
 /* About image — remove grayscale on scroll */
 .about-img img{transition:filter 1.2s var(--ease) .3s,transform 1.5s var(--ease)}
@@ -236,13 +222,11 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .hero-vinyl{min-height:85vh;min-height:85svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:2rem clamp(1.5rem,5vw,5rem);padding-bottom:2rem}
 
 .vinyl-logo{position:relative;width:clamp(320px,75vw,900px);aspect-ratio:920/300}
-.letter-layer{position:absolute;inset:0;pointer-events:none}
+.letter-layer{position:absolute;inset:0;pointer-events:none;opacity:0}
 .letter-layer svg{width:100%;height:100%;display:block}
 .letter-layer polygon,.letter-layer path{pointer-events:auto;cursor:pointer}
 
 /* --- Initial hidden state --- */
-.letter-layer{opacity:0}
-.vinyl-portal{opacity:0;transform:scale(.4)}
 .vinyl-sub,.vinyl-presta,.vinyl-bottom{opacity:0;transform:translateY(20px)}
 
 /* --- Letters: staggered fade in --- */
@@ -328,7 +312,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .hero-vinyl.is-loaded .vinyl-bottom{transition-delay:1s}
 
 /* --- Portal (image circle in the O) --- */
-.vinyl-portal{position:absolute;left:23.5%;top:15.1%;width:25.87%;height:79.33%;border-radius:50%;overflow:hidden}
+.vinyl-portal{position:absolute;left:23.5%;top:15.1%;width:25.87%;height:79.33%;border-radius:50%;overflow:hidden;opacity:0;transform:scale(.4)}
 .vinyl-o-imgs{position:absolute;inset:0;border-radius:50%;overflow:hidden}
 .vinyl-o-img{position:absolute;inset:-10%;width:120%;height:120%;opacity:0;transition:opacity 1.2s ease-in-out,transform 1.2s ease-in-out;transform:scale(1.05)}
 .vinyl-o-img.active{opacity:1;transform:scale(1)}
@@ -354,7 +338,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(.6)}}
 
 /* ===== SECTION SPACING ===== */
-.section-pad{padding:4rem clamp(1.5rem,5vw,5rem)}
+.section-pad{padding:4rem clamp(1.5rem,5vw,5rem);position:relative}
 
 /* ===== SHOWREEL VIDEO ===== */
 .showreel{padding:4rem clamp(1.5rem,5vw,5rem)}
@@ -441,7 +425,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 .process-step p{font-size:15px;color:var(--u-muted,var(--muted));line-height:1.7}
 .process-step:last-child{padding-right:0}
 
-.value-item{padding:1.5rem 0;border-top:1px solid var(--border)}
+.value-item{padding:1.5rem 0;border-top:1px solid var(--border);transition:all .4s var(--ease);position:relative}
 .value-item h4{font-family:var(--fd);font-size:1.15rem;margin-bottom:.4rem}
 .value-item p{font-size:18px;color:var(--muted);line-height:1.7}
 
@@ -484,7 +468,7 @@ cite{display:block;margin-top:1.5rem;font-family:var(--ff);font-size:12px;color:
 .gallery-cta{text-align:center;margin-top:2rem;padding-bottom:2rem}
 .insta-embeds{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:0 clamp(1.5rem,5vw,5rem)}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.gallery-grid a{display:block;aspect-ratio:1;overflow:hidden}
+.gallery-grid a{display:block;aspect-ratio:1;overflow:hidden;transition:transform .5s var(--ease)}
 .gallery-grid img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.9);transition:all .5s var(--ease)}
 
 /* ===== CTA ===== */
@@ -554,7 +538,7 @@ a.presta-card:hover h4{color:var(--blue)}
 
 /* Presta Cards */
 .presta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border)}
-.presta-card{padding:2.5rem 2rem;background:var(--bg)}
+.presta-card{padding:2.5rem 2rem;background:var(--bg);transition:all .4s var(--ease)}
 .presta-card:hover{background:var(--card)}
 .presta-card h4{font-family:var(--fd);font-size:1.3rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.8rem}
 .presta-card h4::before{content:'';width:14px;height:1px;background:var(--blue);flex-shrink:0}
@@ -592,11 +576,8 @@ a.presta-card:hover h4{color:var(--blue)}
 .stat-number{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--blue);display:block}
 .stat-text{font-size:14px;color:var(--muted);letter-spacing:1px;margin-top:.3rem;display:block}
 
-.partners{padding:5rem clamp(1.5rem,5vw,5rem);max-width:1300px;margin:0 auto}
-.partners h2{font-size:clamp(2rem,3.5vw,2.8rem);text-align:center;margin-bottom:3rem}
-.partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
-.partner-card{background:var(--bg);padding:2.5rem}
-.partner-card:hover{background:var(--card)}
+.partner-card{background:var(--bg);padding:2.5rem;transition:transform .5s var(--ease)}
+.partner-card:hover{background:var(--card);transform:translateY(-4px)}
 .partner-card img{width:100%;height:180px;object-fit:cover;margin-bottom:1rem;filter:grayscale(.5);border-radius:8px}
 .partner-card p{font-size:18px;color:var(--muted);line-height:1.7}
 

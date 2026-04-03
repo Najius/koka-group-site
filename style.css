@@ -174,25 +174,25 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline
 [data-header-universe="mariages"] .logo img{filter:none}
 [data-header-universe="mariages"] .burger span{background:#F4F1EC}
 [data-header-universe="mariages"] .header-nav a{color:#b0aaa4}
-[data-header-universe="mariages"].scrolled{background:rgba(13,11,8,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+[data-header-universe="mariages"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="corporate"] .logo img{filter:none}
 [data-header-universe="corporate"] .burger span{background:#dce4ee}
 [data-header-universe="corporate"] .header-nav a{color:#9ab0cc}
-[data-header-universe="corporate"].scrolled{background:rgba(8,12,20,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+[data-header-universe="corporate"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="soirees"] .logo img{filter:none}
 [data-header-universe="soirees"] .burger span{background:#F4F1EC}
 [data-header-universe="soirees"] .header-nav a{color:#999}
-[data-header-universe="soirees"].scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+[data-header-universe="soirees"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 [data-header-universe="artistique"] .logo img{filter:none}
 [data-header-universe="artistique"] .burger span{background:#e8dce8}
 [data-header-universe="artistique"] .header-nav a{color:#b89ebe}
-[data-header-universe="artistique"].scrolled{background:rgba(14,6,16,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+[data-header-universe="artistique"].scrolled{background:rgba(10,22,40,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 
-.header--filled{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-.header--filled[data-header-universe="mariages"]{background:rgba(13,11,8,.88)}
-.header--filled[data-header-universe="corporate"]{background:rgba(8,12,20,.88)}
-.header--filled[data-header-universe="soirees"]{background:rgba(10,10,10,.88)}
-.header--filled[data-header-universe="artistique"]{background:rgba(14,6,16,.88)}
+.header--filled{background:rgba(10,22,40,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header--filled[data-header-universe="mariages"]{background:rgba(10,22,40,.88)}
+.header--filled[data-header-universe="corporate"]{background:rgba(10,22,40,.88)}
+.header--filled[data-header-universe="soirees"]{background:rgba(10,22,40,.88)}
+.header--filled[data-header-universe="artistique"]{background:rgba(10,22,40,.88)}
 
 /* --- Header --- */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:1.6rem clamp(1.5rem,4vw,3.5rem);transition:all .6s var(--ease)}

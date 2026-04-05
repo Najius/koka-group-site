@@ -9,6 +9,12 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.koka-group\.com [NC]
 RewriteRule ^(.*)$ https://koka-group.com/$1 [L,R=301]
 
+# Redirections anciennes URLs WordPress
+RewriteRule ^prestations-seminaires-soirees-privees-installations/?$ /prestations.html [L,R=301]
+RewriteRule ^portfolio-item/(.*)$ / [L,R=301]
+RewriteRule ^wp-content/(.*)$ / [L,R=301]
+RewriteRule ^wp-admin/?$ / [L,R=301]
+
 # Security headers
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"

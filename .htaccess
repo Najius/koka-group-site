@@ -17,7 +17,7 @@ RewriteRule ^(.*)$ https://koka-group.com/$1 [L,R=301]
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.instagram.com https://w.soundcloud.com https://cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://w.soundcloud.com https://www.instagram.com https://cal.com; connect-src 'self' https://formsubmit.co"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.instagram.com https://w.soundcloud.com https://cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://w.soundcloud.com https://www.instagram.com https://cal.eu; connect-src 'self' https://formsubmit.co"
 </IfModule>
 
 # GZIP Compression

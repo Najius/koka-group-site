@@ -1,3 +1,6 @@
+# Fix duplicate content: /index.html → /
+/index.html     /                   301!
+
 # Clean URLs (optional - remove .html)
 /prestations    /prestations.html   200
 /mariages       /mariages.html      200
@@ -9,6 +12,9 @@
 /mentions-legales /mentions-legales.html 200
 /dj-mariage-nantes   /dj-mariage-nantes.html   200
 /dj-mariage-poitiers /dj-mariage-poitiers.html 200
+/animation-mariage-nantes     /animation-mariage-nantes.html     200
+/agence-evenementielle-poitiers /agence-evenementielle-poitiers.html 200
+/dj-loire-atlantique           /dj-loire-atlantique.html           200
 /faq    /faq.html    200
 /blog   /blog.html   200
 /blog/combien-coute-dj-mariage   /blog/combien-coute-dj-mariage.html   200
@@ -30,3 +36,9 @@
 /a-propos-agence-evenementielle-nantes/                 /a-propos.html     301
 /contact-devis-dj-animation-nantes/                     /contact.html      301
 /maintenance/                                            /                  301
+/portfolio-item/*                                        /                  301
+/wp-content/*                                            /                  301
+/wp-admin                                                /                  301
+
+# Old sitemap redirect
+/page-sitemap.xml    /sitemap.xml    301
